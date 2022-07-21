@@ -1,0 +1,217 @@
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+button {
+  position: absolute;
+  right: 0;
+  top: -100px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  &.prev {
+    right: 120px;
+  }
+  .material-icons {
+    font-size: 40px;
+    font-weight: 100;
+    color: #ccc;
+  }
+}
+
+#mainVisual {
+  width: 100%;
+  position: relative;
+  padding-top: 130px;
+  ul {
+    li {
+      width: 100%;
+      height: 71.5vh;
+      background-position: 50% 50%;
+      background-size: cover;
+      display: flex;
+      &.visual01 video {
+        width: 100%;
+        object-fit: cover;
+      }
+      &.visual02 {
+        background-image: url(../images/main/mainVisual03.jpg);
+      }
+      &.visual03 {
+        background-image: url(../images/main/mainVisual02.jpg);
+      }
+      &.visual04 {
+        background-image: url(../images/main/mainVisual01.jpg);
+      }
+      .textBox {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto 80px auto;
+        color: #fff;
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+          text-transform: uppercase;
+          font-size: 70px;
+          font-weight: 700;
+          pointer-events: none;
+          font-family: "Montserrat";
+        }
+        p {
+          margin-top: 30px;
+          font-size: 17px;
+          line-height: 1.5;
+          font-weight: 400;
+          pointer-events: none;
+        }
+        a {
+          margin-top: 60px;
+          &:hover {
+            span:before {
+              width: 100%;
+              right: 0;
+              transition-delay: 0.3s;
+            }
+            span:after {
+              width: 0;
+              right: 0;
+              transition-delay: 0.1s;
+            }
+          }
+          span {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: -0.05em;
+            display: inline-block;
+            position: relative;
+            &::before {
+              content: "";
+              background-color: #fff;
+              width: 0;
+              height: 2px;
+              position: absolute;
+              bottom: -10px;
+              left: 0;
+              transition: width 0.15s ease-in-out;
+            }
+            &::after {
+              content: "";
+              background-color: #fff;
+              width: 100%;
+              height: 2px;
+              position: absolute;
+              bottom: -10px;
+              right: 0;
+              transition: width 0.15s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btns {
+    button {
+      position: absolute;
+      top: 55%;
+      z-index: 100;
+      border: 3px solid rgba(230, 230, 230, 0.3);
+      width: 48px;
+      height: 48px;
+      border-radius: 50px;
+      background: none;
+      transition: all 0.25s ease-in-out;
+      &::before {
+        font-family: "Material icons";
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20%;
+      }
+      &:after {
+        font-family: "Material icons";
+        font-size: 24px;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+      }
+      &:hover {
+        width: 110px;
+        border: 2px solid #fff;
+        &::before {
+          display: none;
+        }
+        &::after {
+          display: block;
+        }
+        &.prev span {
+          opacity: 1;
+          left: 50%;
+        }
+        &.next span {
+          opacity: 1;
+          right: 50%;
+        }
+      }
+      &.prev {
+        left: 4%;
+        &::before {
+          content: "\e5cb";
+        }
+        &::after {
+          content: "\e5cb";
+          left: 20%;
+        }
+        span {
+          left: 0;
+        }
+      }
+      &.next {
+        right: 4%;
+        &::before {
+          content: "\e5cc";
+        }
+        &::after {
+          content: "\e5cc";
+          right: 20%;
+        }
+        span {
+          right: 0;
+        }
+      }
+      span {
+        font-size: 14px;
+        font-weight: 700;
+        color: #fff;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        position: absolute;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  .pagination {
+    position: absolute;
+    bottom: 7.5%;
+    text-align: center;
+    z-index: 100;
+    .swiper-pagination-bullet {
+      width: 27px;
+      height: 6px;
+      border-radius: 0;
+      background-color: #fff;
+    }
+    .swiper-pagination-bullet-active {
+      border-radius: 50px;
+    }
+  }
+}
