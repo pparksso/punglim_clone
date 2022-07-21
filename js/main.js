@@ -42,16 +42,22 @@ new Swiper("#update .search", {
   speed: 1000,
   loop: true,
   navigation: {
-    nextEl: "#new .next",
-    prevEl: "#new .prev",
+    nextEl: ".nav .next",
+    prevEl: ".nav .prev",
   },
   autoplay: {
-    delay: 3000,
+    delay: 4000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
   pagination: {
     el: ".nav .pagination",
     type: "fraction",
+    formatFractionCurrent: function (number) {
+      return `0${number}`;
+    },
+    formatFractionTotal: function (number) {
+      return `0${number}`;
+    },
   },
 });
