@@ -209,3 +209,14 @@ button .material-icons {
 #mainVisual .pagination .swiper-pagination-bullet-active {
   border-radius: 50px;
 }
+
+#update .containerAll {
+  margin-top: 100px;
+  margin-bottom: 130px;
+}
+#update .containerAll .titleNav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 50px;
+}

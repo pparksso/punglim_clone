@@ -21,6 +21,11 @@ a {
   z-index: 99;
   top: 0;
   left: 0;
+  background-color: #fff;
+  transition: height 0.25s ease;
+}
+#header.on {
+  height: 100px;
 }
 #header .container {
   height: 100%;

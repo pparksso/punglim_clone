@@ -215,3 +215,16 @@ button {
     }
   }
 }
+
+#update {
+  .containerAll {
+    margin-top: 100px;
+    margin-bottom: 130px;
+    .titleNav {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 50px;
+    }
+  }
+}
