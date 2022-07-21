@@ -300,6 +300,148 @@ button .material-icons {
   font-weight: 500;
 }
 
+#business {
+  background-color: #f9f9f9;
+}
+#business .container {
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+#business .container .titleBox {
+  display: flex;
+  margin-bottom: 50px;
+}
+#business .container .titleBox .title::before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 18px;
+  background-color: #ccc;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+}
+#business .container .titleBox .title h2 {
+  font-size: 55px;
+  color: #ccc;
+}
+#business .container .titleBox .title.tradeTitle {
+  position: relative;
+  margin-right: 40px;
+}
+#business .container .titleBox .title.tradeTitle.on h2 {
+  color: #d6000e;
+}
+#business .container .titleBox .title.tradeTitle.on::before {
+  background-color: #d6000e;
+}
+#business .container .titleBox .title.medicineTitle {
+  position: relative;
+}
+#business .container .titleBox .title.medicineTitle.on h2 {
+  color: #2d5ffd;
+}
+#business .container .titleBox .title.medicineTitle.on::before {
+  background-color: #2d5ffd;
+}
+#business .container .pannel {
+  display: none;
+}
+#business .container .pannel.on {
+  display: block;
+}
+#business .container .pannel .contentsWrap .textBox p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+#business .container .pannel .contentsWrap .textBox a {
+  font-size: 15px;
+  padding: 20px 25px;
+  border: 3px solid #dddddd;
+  box-sizing: border-box;
+  font-weight: 700;
+  margin-bottom: 80px;
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+}
+#business .container .pannel .contentsWrap .textBox a:hover {
+  border-radius: 150px;
+}
+#business .container .pannel .contentsWrap .textBox a:hover.red {
+  border-color: #d6000e;
+}
+#business .container .pannel .contentsWrap .textBox a:hover.blue {
+  border-color: #2d5ffd;
+}
+#business .container .pannel .contentsWrap .contents .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#business .container .pannel .contentsWrap .contents .list li {
+  position: relative;
+}
+#business .container .pannel .contentsWrap .contents .list li a:hover.zoom img {
+  transition: all 0.7s ease-in-out;
+  transform: scale(1.05);
+}
+#business .container .pannel .contentsWrap .contents .list li a .imgBox {
+  overflow: hidden;
+}
+#business .container .pannel .contentsWrap .contents .list li a p {
+  font-size: 20px;
+  text-align: center;
+  margin: 25px 0 50px 0;
+  font-weight: 500;
+}
+#business .container .pannel .contentsWrap .contents .list li a p.letter {
+  position: absolute;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 22px;
+}
+#business .container .pannel .contentsWrap .contents .list li .box {
+  display: block;
+  width: 361px;
+  height: 361px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#business .container .pannel .contentsWrap .contents .list li .box span {
+  font-weight: 700;
+  font-size: 40px;
+  display: inline-block;
+}
+#business .container .pannel .contentsWrap#trading .box span {
+  color: #d6000e;
+}
+#business .container .pannel .contentsWrap#trading .letter {
+  bottom: 20%;
+  left: 10%;
+  text-align: left;
+}
+#business .container .pannel .contentsWrap#medicine a .imgBox {
+  border-radius: 100%;
+}
+#business .container .pannel .contentsWrap#medicine a .imgBox img {
+  border-radius: 100%;
+  width: 360px;
+  height: 360px;
+}
+#business .container .pannel .contentsWrap#medicine .box span {
+  color: #2d5ffd;
+}
+#business .container .pannel .contentsWrap#medicine .letter {
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
 @keyframes arrowAni {
   0% {
     opacity: 0.5;

@@ -309,6 +309,171 @@ button {
     }
   }
 }
+
+#business {
+  background-color: #f9f9f9;
+  .container {
+    padding-top: 130px;
+    padding-bottom: 80px;
+    .titleBox {
+      display: flex;
+      margin-bottom: 50px;
+      .title {
+        &::before {
+          content: "";
+          display: block;
+          width: 9px;
+          height: 9px;
+          border-radius: 18px;
+          background-color: #ccc;
+          position: absolute;
+          top: -30px;
+          left: 50%;
+        }
+        h2 {
+          font-size: 55px;
+          color: #ccc;
+        }
+        &.tradeTitle {
+          position: relative;
+          margin-right: 40px;
+          &.on {
+            h2 {
+              color: #d6000e;
+            }
+            &::before {
+              background-color: #d6000e;
+            }
+          }
+        }
+        &.medicineTitle {
+          position: relative;
+          &.on {
+            h2 {
+              color: #2d5ffd;
+            }
+            &::before {
+              background-color: #2d5ffd;
+            }
+          }
+        }
+      }
+    }
+    .pannel {
+      display: none;
+      &.on {
+        display: block;
+      }
+      .contentsWrap {
+        .textBox {
+          p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+          }
+          a {
+            font-size: 15px;
+            padding: 20px 25px;
+            border: 3px solid #dddddd;
+            box-sizing: border-box;
+            font-weight: 700;
+            margin-bottom: 80px;
+            display: inline-block;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              border-radius: 150px;
+              &.red {
+                border-color: #d6000e;
+              }
+              &.blue {
+                border-color: #2d5ffd;
+              }
+            }
+          }
+        }
+        .contents {
+          .list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            li {
+              position: relative;
+              a {
+                &:hover {
+                  &.zoom img {
+                    transition: all 0.7s ease-in-out;
+                    transform: scale(1.05);
+                  }
+                }
+                .imgBox {
+                  overflow: hidden;
+                }
+                p {
+                  font-size: 20px;
+                  text-align: center;
+                  margin: 25px 0 50px 0;
+                  font-weight: 500;
+                  &.letter {
+                    position: absolute;
+                    color: #fff;
+                    font-weight: 700;
+                    line-height: 1.5;
+                    font-size: 22px;
+                  }
+                }
+              }
+              .box {
+                display: block;
+                width: 361px;
+                height: 361px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                  font-weight: 700;
+                  font-size: 40px;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+        &#trading {
+          .box span {
+            color: #d6000e;
+          }
+          .letter {
+            bottom: 20%;
+            left: 10%;
+            text-align: left;
+          }
+        }
+        &#medicine {
+          a {
+            .imgBox {
+              border-radius: 100%;
+              img {
+                border-radius: 100%;
+                width: 360px;
+                height: 360px;
+              }
+            }
+          }
+          .box span {
+            color: #2d5ffd;
+          }
+          .letter {
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
+
 @keyframes arrowAni {
   0% {
     opacity: 0.5;

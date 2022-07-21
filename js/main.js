@@ -1,5 +1,7 @@
 const header = document.querySelector("#header");
-
+const pannels = document.querySelectorAll("#business .pannel");
+const businessTitles = document.querySelectorAll("#business .title");
+let siblings = [];
 window.addEventListener("scroll", (e) => {
   let scrollTop = document.documentElement.scrollTop;
   let deltaY = e.deltaY;
@@ -8,10 +10,10 @@ window.addEventListener("scroll", (e) => {
   } else {
     header.classList.remove("on");
   }
-  if (scrollTop >= 1300) {
-    header.style.display = "none";
+  if (scrollTop >= 1000) {
+    header.classList.add("off");
   } else {
-    header.style.display = "block";
+    header.classList.remove("off");
   }
 });
 
@@ -61,3 +63,20 @@ new Swiper("#update .search", {
     },
   },
 });
+
+const titleSiblingsList = () => {
+  siblings = [...businessTitles];
+  siblings.forEach((item, index) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      siblings.forEach((item2) => {
+        item2.classList.remove("on");
+      });
+      item.classList.add("on");
+      pannels.forEach((item3, index2) => {
+        index === index2 ? item3.classList.add("on") : item3.classList.remove("on");
+      });
+    });
+  });
+};
+titleSiblingsList();

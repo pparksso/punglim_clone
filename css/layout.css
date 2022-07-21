@@ -18,14 +18,17 @@ a {
   height: 130px;
   position: fixed;
   width: 100vw;
-  z-index: 99;
+  z-index: 999;
   top: 0;
   left: 0;
   background-color: #fff;
-  transition: height 0.25s ease;
+  transition: all 0.5s ease;
 }
 #header.on {
   height: 100px;
+}
+#header.off {
+  top: -100px;
 }
 #header .container {
   height: 100%;
