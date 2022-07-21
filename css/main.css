@@ -1,3 +1,10 @@
+h1 {
+  margin-bottom: 50px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+}
+
 h2 {
   font-size: 40px;
   font-weight: 700;
@@ -208,12 +215,6 @@ button .material-icons {
   position: relative;
   margin-top: 100px;
   margin-bottom: 130px;
-}
-#update .container .titleNav {
-  margin-bottom: 50px;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 60px;
 }
 #update .container #new {
   position: relative;
@@ -440,6 +441,139 @@ button .material-icons {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+}
+
+#recommend .container {
+  margin-top: 100px;
+}
+#recommend .container .title {
+  margin-bottom: 70px;
+}
+#recommend .container .inner {
+  width: 100%;
+  position: relative;
+}
+#recommend .container .inner .bar {
+  display: flex;
+}
+#recommend .container .inner .bar .list .selectBar {
+  border: 2px solid #dedede;
+  width: 140px;
+  height: 70px;
+  border-radius: 45px 45px 45px 45px;
+  display: block;
+  display: flex;
+  margin-right: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  transition: border-color 0.25s ease-in-out;
+}
+#recommend .container .inner .bar .list .selectBar:hover {
+  border-color: #000;
+}
+#recommend .container .inner .bar .list .selectBar::after {
+  content: "\e5cf";
+  font-family: "Material Icons";
+  font-weight: 500;
+  font-size: 30px;
+}
+#recommend .container .inner .bar .list .selectBar:active:after {
+  transform: rotate(-180deg);
+}
+#recommend .container .inner .bar .list .selectBar.open {
+  border-color: #000;
+  border-bottom: none;
+  border-radius: 45px 45px 0 0;
+}
+#recommend .container .inner .bar .list .selectBar span {
+  font-weight: 700;
+  font-size: 17px;
+}
+#recommend .container .inner .bar .list .selectList {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  border: 2px solid #000;
+  width: 220px;
+  height: 210px;
+  border-radius: 0 0 50px 50px;
+  border-top: none;
+}
+#recommend .container .inner .bar .list .selectList.open {
+  display: block;
+}
+#recommend .container .inner .bar .list .selectList ul li {
+  padding: 25px 30px 0 30px;
+}
+#recommend .container .inner .bar .list .selectList ul li .etc {
+  display: block;
+  color: #9a9a9d;
+  font-weight: 400;
+  font-size: 17px;
+}
+#recommend .container .inner .bar .list .selectList ul li .etc:hover {
+  color: #000;
+}
+#recommend .container .inner .bar .list .selectList ul li .all {
+  color: #000;
+  font-weight: 400;
+  font-size: 17px;
+  display: block;
+}
+#recommend .container .inner .bar .textBox {
+  background-color: #f4f4f4;
+  height: 70px;
+  width: 900px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  border-radius: 100px 0 0 100px;
+  padding-left: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+#recommend .container .inner .bar .textBox input {
+  background: none;
+  border: none;
+  font-size: 17px;
+  width: 100%;
+  outline: none;
+  font-weight: 500;
+}
+#recommend .container .inner .bar .search button {
+  width: 180px;
+  height: 70px;
+  background-color: #000;
+  box-sizing: border-box;
+  top: 0;
+  border-radius: 0 100px 100px 0;
+}
+#recommend .container .inner .bar .search button span {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+}
+#recommend .container .inner .tagList {
+  margin-top: 30px;
+  position: absolute;
+  z-index: 99;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+#recommend .container .inner .tagList span {
+  font-size: 16px;
+  font-weight: 700;
+}
+#recommend .container .inner .tagList ul {
+  display: flex;
+}
+#recommend .container .inner .tagList ul li {
+  margin-right: 20px;
+  color: #9a9a9d;
+}
+#recommend .container .inner .tagList ul li:hover {
+  color: #000;
 }
 
 @keyframes arrowAni {

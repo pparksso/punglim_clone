@@ -2,19 +2,11 @@ const header = document.querySelector("#header");
 const pannels = document.querySelectorAll("#business .pannel");
 const businessTitles = document.querySelectorAll("#business .title");
 let siblings = [];
-window.addEventListener("scroll", (e) => {
+window.addEventListener("wheel", (e) => {
   let scrollTop = document.documentElement.scrollTop;
   let deltaY = e.deltaY;
-  if (scrollTop > 0) {
-    header.classList.add("on");
-  } else {
-    header.classList.remove("on");
-  }
-  if (scrollTop >= 1000) {
-    header.classList.add("off");
-  } else {
-    header.classList.remove("off");
-  }
+  scrollTop > 150 ? header.classList.add("on") : header.classList.remove("on");
+  scrollTop >= 1000 && deltaY > 0 ? header.classList.add("off") : header.classList.remove("off");
 });
 
 new Swiper("#mainVisual .swiper", {
