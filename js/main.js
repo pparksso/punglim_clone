@@ -1,6 +1,9 @@
 const header = document.querySelector("#header");
 const pannels = document.querySelectorAll("#business .pannel");
 const businessTitles = document.querySelectorAll("#business .title");
+const select = document.querySelector("#recommend .selectBar");
+const selectList = document.querySelector("#recommend .selectList");
+
 let siblings = [];
 window.addEventListener("wheel", (e) => {
   let scrollTop = document.documentElement.scrollTop;
@@ -72,3 +75,9 @@ const titleSiblingsList = () => {
   });
 };
 titleSiblingsList();
+
+select.addEventListener("click", (e) => {
+  e.preventDefault();
+  select.classList.toggle("open");
+  selectList.classList.toggle("open");
+});
