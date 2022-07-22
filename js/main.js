@@ -1,18 +1,8 @@
-const header = document.querySelector("#header");
 const pannels = document.querySelectorAll("#business .pannel");
 const businessTitles = document.querySelectorAll("#business .title");
 const select = document.querySelector("#recommend .selectBar");
 const selectList = document.querySelector("#recommend .selectList");
-const infoBtn = document.querySelector("#footer .richwood");
-const info = document.querySelector("#footer .info");
-
 let siblings = [];
-window.addEventListener("wheel", (e) => {
-  let scrollTop = document.documentElement.scrollTop;
-  let deltaY = e.deltaY;
-  scrollTop > 150 ? header.classList.add("on") : header.classList.remove("on");
-  scrollTop >= 1000 && deltaY > 0 ? header.classList.add("off") : header.classList.remove("off");
-});
 
 new Swiper("#mainVisual .swiper", {
   effect: "fade", //slide, fade, cube, coverflow, card
@@ -82,9 +72,4 @@ select.addEventListener("click", (e) => {
   e.preventDefault();
   select.classList.toggle("open");
   selectList.classList.toggle("open");
-});
-
-infoBtn.addEventListener("click", () => {
-  info.classList.toggle("on");
-  infoBtn.classList.toggle("on");
 });

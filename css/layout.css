@@ -9,6 +9,17 @@ a {
   text-decoration: none;
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button .material-icons {
+  font-size: 40px;
+  font-weight: 100;
+  color: #ccc;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -62,6 +73,9 @@ a {
   align-items: center;
   height: 130px;
   position: relative;
+}
+#gnb nav li .depth01.active:after {
+  display: block;
 }
 #gnb nav li .depth01::after {
   content: "";
