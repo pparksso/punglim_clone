@@ -3,6 +3,8 @@ const pannels = document.querySelectorAll("#business .pannel");
 const businessTitles = document.querySelectorAll("#business .title");
 const select = document.querySelector("#recommend .selectBar");
 const selectList = document.querySelector("#recommend .selectList");
+const infoBtn = document.querySelector("#footer .richwood");
+const info = document.querySelector("#footer .info");
 
 let siblings = [];
 window.addEventListener("wheel", (e) => {
@@ -80,4 +82,9 @@ select.addEventListener("click", (e) => {
   e.preventDefault();
   select.classList.toggle("open");
   selectList.classList.toggle("open");
+});
+
+infoBtn.addEventListener("click", () => {
+  info.classList.toggle("on");
+  infoBtn.classList.toggle("on");
 });

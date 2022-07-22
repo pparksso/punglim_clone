@@ -103,3 +103,131 @@ a {
     }
   }
 }
+
+#footer {
+  background-color: #000;
+  color: #fff;
+  padding: 140px 0 126px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .footerRight {
+      padding: 15px 150px 0 0;
+      .footerMenu {
+        ul {
+          margin-bottom: 60px;
+          li {
+            padding-bottom: 20px;
+            font-weight: 700;
+            font-size: 28px;
+            a {
+              position: relative;
+              &::before {
+                content: "";
+                background-color: #fff;
+                width: 5px;
+                height: 5px;
+                border-radius: 10px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -15px;
+                opacity: 0;
+                transition: all 0.25s ease-in-out;
+              }
+              &:hover::before {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      .infoWrap {
+        .richwood {
+          color: #fff;
+          font-size: 28px;
+          font-weight: 700;
+          font-family: "Montserrat", sans-serif;
+          position: relative;
+          &::after {
+            content: "\e5ce";
+            font-family: "Material Icons";
+            font-size: 28px;
+            position: absolute;
+            font-weight: 500;
+            top: 50%;
+            right: -25px;
+            transform: translateY(-50%) rotate(0);
+            transition: transform 0.25s ease;
+          }
+          &.on::after {
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
+        .info {
+          color: #666666;
+          display: flex;
+          flex-direction: column;
+          line-height: 2;
+          margin-top: 20px;
+          font-size: 14px;
+          font-weight: 400;
+          height: 0;
+          overflow: hidden;
+          transition: all 0.25s ease-in-out;
+          &.on {
+            overflow: none;
+            height: 60px;
+          }
+          .phone {
+            p {
+              display: inline-block;
+              margin-left: 10px;
+            }
+            span {
+              margin-right: 10px;
+            }
+            a {
+              transition: color 0.25s ease-in-out;
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+          .adress {
+            span {
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+      .law {
+        line-height: 2.5;
+        margin-top: 40px;
+        .privacy {
+          font-size: 15px;
+          strong {
+            color: #fff;
+            font-weight: 700;
+            margin-right: 20px;
+          }
+          a {
+            color: #999999;
+            font-weight: 500;
+          }
+        }
+        p {
+          color: #757575;
+          font-weight: 600;
+          font-size: 13px;
+          font-family: "Montserrat", sans-serif;
+        }
+      }
+    }
+  }
+}
