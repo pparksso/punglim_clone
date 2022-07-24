@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="../css/layout.min.css" />
     <link rel="stylesheet" href="../css/location.min.css" />
     <!-- js -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=db91253c790be6384bd5985d9ced3424&libraries=services"></script>
   </head>
   <body>
     <header id="header">
@@ -166,15 +166,15 @@
         </div>
         <div class="locationTabs">
           <ul class="list">
-            <li><a href="" class="on">본사</a></li>
-            <li><a href="">제약사업본부</a></li>
-            <li><a href="">R&D센터</a></li>
-            <li><a href="">향남공장</a></li>
-            <li><a href="">물류센터</a></li>
+            <li><a href="" class="tab on" data-address="서울시 중구 소월로 10 단암빌딩" data-name="풍림무약 본사">본사</a></li>
+            <li><a href="" class="tab" data-address="서울시 중구 소월로 10 단암빌딩" data-name="제약사업본부">제약사업본부</a></li>
+            <li><a href="" class="tab" data-address="서울시 관악구 관악로 1 (신림동) 서울대학교 약학대학 신약개발센터" data-name="R&D센터">R&D센터</a></li>
+            <li><a href="" class="tab" data-address="경기도 화성시 향남읍 제약공단3길 120" data-name="향남공장">향남공장</a></li>
+            <li><a href="" class="tab" data-address="경기도 평택시 청북읍 청북중앙로 658-13" data-name="물류센터">물류센터</a></li>
           </ul>
         </div>
-        <div class="pannel">
-          <div class="map"></div>
+        <div class="map"></div>
+        <div class="pannel on">
           <div class="contactInfo">
             <div class="company">
               <h2>회사정보</h2>
