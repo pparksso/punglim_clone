@@ -39,6 +39,9 @@ button {
   &.on {
     height: 100px;
     border-bottom: 1px solid #ddd;
+    .depth02 {
+      top: 115px;
+    }
   }
   &.off {
     top: -100px;
@@ -448,7 +451,8 @@ button {
   }
   #header {
     background-color: transparent;
-    &.on {
+    &.on,
+    &.locationHeader {
       background-color: rgba(255, 255, 255, 0.9);
       #logo a svg {
         .symbol-green {

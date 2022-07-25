@@ -3,16 +3,17 @@
 }
 #location .container .title {
   font-weight: 700;
-  font-size: 82px;
-  padding-top: 140px;
+  font-size: clamp(50px, 4.2vw, 82px);
+  padding-top: clamp(35px, 7.2vw, 140px);
 }
 #location .container .locationTabs {
-  margin: 66px 0 100px 0;
+  margin: clamp(33px, 3.4vw, 66px) 0 clamp(30px, 5.2vw, 100px) 0;
 }
 #location .container .locationTabs .list {
   display: flex;
   font-weight: 700;
-  font-size: 26px;
+  word-break: keep-all;
+  font-size: clamp(18px, 1.3vw, 26px);
   color: #999;
 }
 #location .container .locationTabs .list li {
@@ -43,8 +44,8 @@
   display: block;
 }
 #location .container #map {
-  width: 100%;
   height: 550px;
+  width: 100%;
 }
 #location .container #map .overlay {
   text-align: center;
@@ -69,7 +70,7 @@
   transform: translateX(-50%);
 }
 #location .container .pannel {
-  margin-bottom: 200px;
+  margin-bottom: clamp(100px, 10vw, 200px);
   display: none;
 }
 #location .container .pannel.on {
@@ -85,12 +86,12 @@
   flex-basis: 50%;
 }
 #location .container .pannel .contactInfo h2 {
-  font-size: 32px;
+  font-size: clamp(22px, 1.6vw, 32px);
   font-weight: 700;
   margin-bottom: 42px;
 }
 #location .container .pannel .contactInfo .subtitle {
-  font-size: 18px;
+  font-size: clamp(12px, 0.9vw, 18px);
   font-weight: 500;
   margin-bottom: 16px;
   position: relative;
@@ -114,20 +115,21 @@
 #location .container .pannel .contactInfo li span,
 #location .container .pannel .contactInfo li p,
 #location .container .pannel .contactInfo li address {
-  font-size: 18px;
+  font-size: clamp(12px, 0.9vw, 18px);
   color: #666;
   font-weight: 400;
   line-height: 2;
+  word-break: keep-all;
 }
 #location .container .pannel .contactInfo li .num {
-  padding-left: 35px;
+  padding-left: clamp(20px, 1.8vw, 35px);
   position: relative;
 }
 #location .container .pannel .contactInfo li .num::before {
   content: "";
   display: block;
-  width: 26px;
-  height: 26px;
+  width: clamp(18px, 1.3vw, 26px);
+  height: clamp(18px, 1.3vw, 26px);
   background-color: #ccc;
   border-radius: 100%;
   position: absolute;
@@ -140,8 +142,8 @@
   color: #fff;
   position: absolute;
   font-weight: 700;
-  left: 10px;
-  font-size: 15px;
+  left: clamp(7px, 0.5vw, 10px);
+  font-size: clamp(10px, 0.7vw, 15px);
   top: 50%;
   transform: translateY(-50%);
 }
@@ -155,7 +157,7 @@
   content: "3";
 }
 #location .container .pannel a {
-  font-size: 16px;
+  font-size: clamp(11px, 0.8vw, 16px);
   font-weight: 700;
   display: inline-block;
   color: #222;
@@ -169,4 +171,94 @@
   border-radius: 40px;
   border-color: #000;
   color: #000;
+}
+
+@media all and (max-width: 1025px) {
+  #location .container .title {
+    font-size: clamp(34px, 6vw, 62px);
+  }
+  #location .container .locationTabs .list {
+    font-size: clamp(14px, 2.5vw, 26px);
+  }
+  #location .container .pannel .contactInfo h2 {
+    font-size: clamp(16px, 2.7vw, 28px);
+  }
+  #location .container .pannel .contactInfo .subtitle {
+    font-size: clamp(12px, 1.7vw, 18px);
+  }
+  #location .container .pannel .contactInfo .subtitle:before {
+    width: clamp(3px, 0.4vw, 5px);
+    height: clamp(3px, 0.4vw, 5px);
+  }
+  #location .container .pannel .contactInfo li span,
+#location .container .pannel .contactInfo li p,
+#location .container .pannel .contactInfo li address {
+    font-size: clamp(12px, 1.7vw, 18px);
+  }
+  #location .container .pannel .contactInfo li .num::before {
+    width: clamp(16px, 2.5vw, 26px);
+    height: clamp(16px, 2.5vw, 26px);
+  }
+  #location .container .pannel .contactInfo li .num:after {
+    left: clamp(7px, 0.9vw, 10px);
+    font-size: clamp(10px, 1.4vw, 15px);
+  }
+  #location .container .pannel a {
+    font-size: clamp(11px, 1.5vw, 16px);
+  }
+}
+@media all and (max-width: 861px) {
+  #location .container .pannel .contactInfo {
+    flex-direction: column;
+  }
+  #location .container .pannel .contactInfo .company {
+    margin-bottom: clamp(85px, 15vw, 135px);
+  }
+}
+@media all and (max-width: 541px) {
+  #location .container .title {
+    font-size: clamp(28px, 10vw, 58px);
+  }
+  #location .container .locationTabs .list {
+    font-size: clamp(11px, 4.2vw, 23px);
+  }
+  #location .container .locationTabs .list li {
+    padding: 0 5px;
+  }
+  #location .container #map {
+    height: 400px;
+  }
+  #location .container .pannel .contactInfo h2 {
+    font-size: clamp(14px, 5.3vw, 29px);
+  }
+  #location .container .pannel .contactInfo .subtitle {
+    font-size: clamp(11px, 4.2vw, 23px);
+  }
+  #location .container .pannel .contactInfo .subtitle:before {
+    width: clamp(3px, 0.9vw, 5px);
+    height: clamp(3px, 0.9vw, 5px);
+  }
+  #location .container .pannel .contactInfo li span,
+#location .container .pannel .contactInfo li p,
+#location .container .pannel .contactInfo li address {
+    font-size: clamp(11px, 4vw, 22px);
+  }
+  #location .container .pannel .contactInfo li .num::before {
+    width: clamp(18px, 4.8vw, 26px);
+    height: clamp(18px, 4.8vw, 26px);
+    top: 0;
+    transform: translateY(30%);
+    left: -10px;
+  }
+  #location .container .pannel .contactInfo li .num:after {
+    left: clamp(7px, 1.8vw, 10px);
+    font-size: clamp(10px, 2.7vw, 15px);
+    top: 0;
+    transform: translateY(30%);
+    left: -3px;
+  }
+  #location .container .pannel a {
+    font-size: clamp(10px, 3.7vw, 20px);
+    padding: clamp(10px, 2.7vw, 15px) clamp(25px, 7.4vw, 40px);
+  }
 }

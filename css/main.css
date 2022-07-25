@@ -802,8 +802,8 @@ p {
     line-height: clamp(50px, 3.5vw, 60px);
   }
   #update .container #new .search ul li a {
-    height: clamp(90px, 6.5vh, 110px);
-    line-height: clamp(90px, 6.5vh, 110px);
+    height: clamp(90px, 6.5vw, 110px);
+    line-height: clamp(90px, 6.5vw, 110px);
   }
   #update .container #new .search ul li a .textBox {
     font-size: clamp(20px, 1.3vw, 22px);
@@ -840,7 +840,7 @@ p {
   }
   #business .container .titleBox .title:before {
     width: clamp(6px, 0.6vw, 9px);
-    height: clamp(6px, 0.6vh, 9px);
+    height: clamp(6px, 0.6vw, 9px);
   }
   #business .container .pannel .contentsWrap .textBox p {
     font-size: clamp(14px, 1.2vw, 18px);
@@ -850,10 +850,10 @@ p {
     padding: clamp(15px, 1.3vw, 20px) clamp(20px, 1.6vw, 25px);
   }
   #recommend .container .inner .bar {
-    height: clamp(80px, 6vh, 90px);
+    height: clamp(80px, 6vw, 90px);
   }
   #recommend .container .inner .bar .list li .selectBtn {
-    height: clamp(80px, 6vh, 90px);
+    height: clamp(80px, 6vw, 90px);
   }
   #recommend .container .inner .bar .list li .selectBtn:after {
     font-size: clamp(24px, 2vw, 30px);
@@ -994,7 +994,7 @@ p {
   }
   #business .container .titleBox .title:before {
     width: clamp(6px, 0.6vw, 9px);
-    height: clamp(6px, 0.6vh, 9px);
+    height: clamp(6px, 0.6vw, 9px);
   }
   #business .container .pannel .contentsWrap .textBox p {
     font-size: clamp(12px, 1.9vw, 17px);
@@ -1084,7 +1084,7 @@ p {
 @media all and (max-width: 540px) {
   .subtitle {
     font-size: clamp(27px, 8.5vw, 46px);
-    line-height: clamp(36px, 10vh, 57px);
+    line-height: clamp(36px, 10vw, 57px);
   }
   #mainVisual .swiper ul li .textBox {
     padding: 0 20px;

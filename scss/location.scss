@@ -3,15 +3,16 @@
   .container {
     .title {
       font-weight: 700;
-      font-size: 82px;
-      padding-top: 140px;
+      font-size: clamp(50px, 4.2vw, 82px);
+      padding-top: clamp(35px, 7.2vw, 140px);
     }
     .locationTabs {
-      margin: 66px 0 100px 0;
+      margin: clamp(33px, 3.4vw, 66px) 0 clamp(30px, 5.2vw, 100px) 0;
       .list {
         display: flex;
         font-weight: 700;
-        font-size: 26px;
+        word-break: keep-all;
+        font-size: clamp(18px, 1.3vw, 26px);
         color: #999;
         li {
           padding: 0 22px;
@@ -42,9 +43,10 @@
         }
       }
     }
+
     #map {
-      width: 100%;
       height: 550px;
+      width: 100%;
       .overlay {
         text-align: center;
         background-color: #000;
@@ -69,7 +71,7 @@
       }
     }
     .pannel {
-      margin-bottom: 200px;
+      margin-bottom: clamp(100px, 10vw, 200px);
       display: none;
       &.on {
         display: block;
@@ -83,12 +85,12 @@
           flex-basis: 50%;
         }
         h2 {
-          font-size: 32px;
+          font-size: clamp(22px, 1.6vw, 32px);
           font-weight: 700;
           margin-bottom: 42px;
         }
         .subtitle {
-          font-size: 18px;
+          font-size: clamp(12px, 0.9vw, 18px);
           font-weight: 500;
           margin-bottom: 16px;
           position: relative;
@@ -111,19 +113,20 @@
           span,
           p,
           address {
-            font-size: 18px;
+            font-size: clamp(12px, 0.9vw, 18px);
             color: #666;
             font-weight: 400;
             line-height: 2;
+            word-break: keep-all;
           }
           .num {
-            padding-left: 35px;
+            padding-left: clamp(20px, 1.8vw, 35px);
             position: relative;
             &::before {
               content: "";
               display: block;
-              width: 26px;
-              height: 26px;
+              width: clamp(18px, 1.3vw, 26px);
+              height: clamp(18px, 1.3vw, 26px);
               background-color: #ccc;
               border-radius: 100%;
               position: absolute;
@@ -136,8 +139,8 @@
               color: #fff;
               position: absolute;
               font-weight: 700;
-              left: 10px;
-              font-size: 15px;
+              left: clamp(7px, 0.5vw, 10px);
+              font-size: clamp(10px, 0.7vw, 15px);
               top: 50%;
               transform: translateY(-50%);
             }
@@ -160,7 +163,7 @@
         }
       }
       a {
-        font-size: 16px;
+        font-size: clamp(11px, 0.8vw, 16px);
         font-weight: 700;
         display: inline-block;
         color: #222;
@@ -174,6 +177,118 @@
           border-color: #000;
           color: #000;
         }
+      }
+    }
+  }
+}
+
+@media all and(max-width:1025px) {
+  #location .container {
+    .title {
+      font-size: clamp(34px, 6vw, 62px);
+    }
+    .locationTabs .list {
+      font-size: clamp(14px, 2.5vw, 26px);
+    }
+    .pannel {
+      .contactInfo {
+        h2 {
+          font-size: clamp(16px, 2.7vw, 28px);
+        }
+        .subtitle {
+          font-size: clamp(12px, 1.7vw, 18px);
+          &:before {
+            width: clamp(3px, 0.4vw, 5px);
+            height: clamp(3px, 0.4vw, 5px);
+          }
+        }
+        li {
+          span,
+          p,
+          address {
+            font-size: clamp(12px, 1.7vw, 18px);
+          }
+          .num {
+            &::before {
+              width: clamp(16px, 2.5vw, 26px);
+              height: clamp(16px, 2.5vw, 26px);
+            }
+            &:after {
+              left: clamp(7px, 0.9vw, 10px);
+              font-size: clamp(10px, 1.4vw, 15px);
+            }
+          }
+        }
+      }
+      a {
+        font-size: clamp(11px, 1.5vw, 16px);
+      }
+    }
+  }
+}
+@media all and(max-width:861px) {
+  #location .container {
+    .pannel .contactInfo {
+      flex-direction: column;
+      .company {
+        margin-bottom: clamp(85px, 15vw, 135px);
+      }
+    }
+  }
+}
+@media all and(max-width:541px) {
+  #location .container {
+    .title {
+      font-size: clamp(28px, 10vw, 58px);
+    }
+    .locationTabs .list {
+      font-size: clamp(11px, 4.2vw, 23px);
+      li {
+        padding: 0 5px;
+      }
+    }
+    #map {
+      height: 400px;
+    }
+    .pannel {
+      .contactInfo {
+        h2 {
+          font-size: clamp(14px, 5.3vw, 29px);
+        }
+        .subtitle {
+          font-size: clamp(11px, 4.2vw, 23px);
+          &:before {
+            width: clamp(3px, 0.9vw, 5px);
+            height: clamp(3px, 0.9vw, 5px);
+          }
+        }
+        li {
+          span,
+          p,
+          address {
+            font-size: clamp(11px, 4vw, 22px);
+          }
+          .num {
+            &::before {
+              width: clamp(18px, 4.8vw, 26px);
+              height: clamp(18px, 4.8vw, 26px);
+              top: 0;
+              transform: translateY(30%);
+              left: -10px;
+            }
+            &:after {
+              left: clamp(7px, 1.8vw, 10px);
+              font-size: clamp(10px, 2.7vw, 15px);
+              top: 0;
+              transform: translateY(30%);
+              left: -3px;
+            }
+          }
+        }
+      }
+      a {
+        font-size: clamp(10px, 3.7vw, 20px);
+        padding: clamp(10px, 2.7vw, 15px) clamp(25px, 7.4vw, 40px);
       }
     }
   }

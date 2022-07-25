@@ -41,6 +41,9 @@ button .material-icons {
   height: 100px;
   border-bottom: 1px solid #ddd;
 }
+#header.on .depth02 {
+  top: 115px;
+}
 #header.off {
   top: -100px;
 }
@@ -428,19 +431,19 @@ button .material-icons {
   #header {
     background-color: transparent;
   }
-  #header.on {
+  #header.on, #header.locationHeader {
     background-color: rgba(255, 255, 255, 0.9);
   }
-  #header.on #logo a svg .symbol-green {
+  #header.on #logo a svg .symbol-green, #header.locationHeader #logo a svg .symbol-green {
     fill: #009d42;
   }
-  #header.on #logo a svg .svg02 {
+  #header.on #logo a svg .svg02, #header.locationHeader #logo a svg .svg02 {
     fill: inherit;
   }
-  #header.on #gnbBtns ul li .material-icons {
+  #header.on #gnbBtns ul li .material-icons, #header.locationHeader #gnbBtns ul li .material-icons {
     color: #000;
   }
-  #header.on #gnbBtns ul li.hamberger span {
+  #header.on #gnbBtns ul li.hamberger span, #header.locationHeader #gnbBtns ul li.hamberger span {
     background-color: #000;
   }
   #logo a svg .symbol-green {

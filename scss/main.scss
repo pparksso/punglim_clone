@@ -862,8 +862,8 @@ p {
   #update .container #new .search {
     ul li {
       a {
-        height: clamp(90px, 6.5vh, 110px);
-        line-height: clamp(90px, 6.5vh, 110px);
+        height: clamp(90px, 6.5vw, 110px);
+        line-height: clamp(90px, 6.5vw, 110px);
         .textBox {
           font-size: clamp(20px, 1.3vw, 22px);
         }
@@ -910,7 +910,7 @@ p {
       }
       &:before {
         width: clamp(6px, 0.6vw, 9px);
-        height: clamp(6px, 0.6vh, 9px);
+        height: clamp(6px, 0.6vw, 9px);
       }
     }
     .pannel .contentsWrap {
@@ -926,10 +926,10 @@ p {
     }
   }
   #recommend .container .inner .bar {
-    height: clamp(80px, 6vh, 90px);
+    height: clamp(80px, 6vw, 90px);
     .list li {
       .selectBtn {
-        height: clamp(80px, 6vh, 90px);
+        height: clamp(80px, 6vw, 90px);
         &:after {
           font-size: clamp(24px, 2vw, 30px);
         }
@@ -1084,7 +1084,7 @@ p {
       }
       &:before {
         width: clamp(6px, 0.6vw, 9px);
-        height: clamp(6px, 0.6vh, 9px);
+        height: clamp(6px, 0.6vw, 9px);
       }
     }
     .pannel .contentsWrap {
@@ -1184,7 +1184,7 @@ p {
 @media all and(max-width:540px) {
   .subtitle {
     font-size: clamp(27px, 8.5vw, 46px);
-    line-height: clamp(36px, 10vh, 57px);
+    line-height: clamp(36px, 10vw, 57px);
   }
   #mainVisual .swiper ul li .textBox {
     padding: 0 20px;
