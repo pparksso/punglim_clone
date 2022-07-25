@@ -1141,6 +1141,32 @@ p {
   #business .container .pannel .contentsWrap .contents .list li .medicineHidden {
     display: none;
   }
+  #recommend .container .inner .bar .list {
+    flex-basis: 35%;
+  }
+  #recommend .container .inner .bar .list li .selectBtn {
+    padding: 0 clamp(5px, 3.7vw, 20px);
+    border-radius: 25px;
+  }
+  #recommend .container .inner .bar .list li .selectBtn.open {
+    border-radius: 25px 25px 0 0;
+  }
+  #recommend .container .inner .bar .list li .selectList {
+    border-radius: 0 0 25px 25px;
+    height: 170px;
+  }
+  #recommend .container .inner .bar .list li .selectList li {
+    padding: 10px;
+  }
+  #recommend .container .inner .bar .textBox {
+    padding-left: clamp(10px, 5.5vw, 30px);
+  }
+  #recommend .container .inner .bar .search .mobileSearchBtn {
+    right: clamp(10px, 7.5vw, 40px);
+  }
+  #recommend .container .inner .bar .search .mobileSearchBtn .material-icons {
+    font-size: clamp(20px, 5.5vw, 30px);
+  }
   #newsSns .container .title h2 {
     font-size: clamp(25px, 8.3vw, 45px);
   }

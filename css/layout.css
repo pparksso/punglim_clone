@@ -325,8 +325,9 @@ button .material-icons {
   transform: translateY(-50%) rotate(0);
 }
 #footer .container .footerRight .infoWrap .info {
+  word-break: keep-all;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   height: 0;
   overflow: hidden;
   margin-top: 20px;
@@ -340,20 +341,16 @@ button .material-icons {
   height: 60px;
   overflow: none;
 }
-#footer .container .footerRight .infoWrap .info .phone p {
-  display: inline-block;
-  margin-left: 10px;
-}
-#footer .container .footerRight .infoWrap .info .phone span {
+#footer .container .footerRight .infoWrap .info span {
   margin-right: 10px;
 }
-#footer .container .footerRight .infoWrap .info .phone a {
+#footer .container .footerRight .infoWrap .info a {
   transition: color 0.25s ease-in-out;
 }
-#footer .container .footerRight .infoWrap .info .phone a:hover {
+#footer .container .footerRight .infoWrap .info a:hover {
   color: #fff;
 }
-#footer .container .footerRight .infoWrap .info .adress span {
+#footer .container .footerRight .infoWrap .info .adress {
   margin-right: 20px;
 }
 #footer .container .footerRight .law {
@@ -467,6 +464,9 @@ button .material-icons {
   #footer .container .footerRight .footerMenu {
     display: none;
   }
+  #footer .container .footerRight .infoWrap {
+    width: 75%;
+  }
   #footer .container .footerRight .law {
     margin-top: 0;
   }
@@ -530,6 +530,9 @@ button .material-icons {
   #footer {
     padding: 33px 0;
   }
+  #footer .container .footerRight .infoWrap {
+    width: 100%;
+  }
   #footer .container .footerRight .infoWrap .richwood {
     font-size: clamp(18px, 5.9vw, 32px);
   }
@@ -538,6 +541,9 @@ button .material-icons {
   }
   #footer .container .footerRight .infoWrap .info {
     font-size: clamp(11px, 3.7vw, 20px);
+  }
+  #footer .container .footerRight .infoWrap .info.on {
+    height: 110px;
   }
   #footer .container .footerRight .law .privacy {
     font-size: clamp(11px, 3.5vw, 19px);

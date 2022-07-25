@@ -325,8 +325,9 @@ button {
           }
         }
         .info {
+          word-break: keep-all;
           display: flex;
-          flex-direction: column;
+          flex-wrap: wrap;
           height: 0;
           overflow: hidden;
           margin-top: 20px;
@@ -339,25 +340,17 @@ button {
             height: 60px;
             overflow: none;
           }
-          .phone {
-            p {
-              display: inline-block;
-              margin-left: 10px;
-            }
-            span {
-              margin-right: 10px;
-            }
-            a {
-              transition: color 0.25s ease-in-out;
-              &:hover {
-                color: #fff;
-              }
+          span {
+            margin-right: 10px;
+          }
+          a {
+            transition: color 0.25s ease-in-out;
+            &:hover {
+              color: #fff;
             }
           }
           .adress {
-            span {
-              margin-right: 20px;
-            }
+            margin-right: 20px;
           }
         }
       }
@@ -496,6 +489,9 @@ button {
         .footerMenu {
           display: none;
         }
+        .infoWrap {
+          width: 75%;
+        }
         .law {
           margin-top: 0;
           .privacy {
@@ -572,6 +568,7 @@ button {
     padding: 33px 0;
     .container .footerRight {
       .infoWrap {
+        width: 100%;
         .richwood {
           font-size: clamp(18px, 5.9vw, 32px);
           &:after {
@@ -580,6 +577,9 @@ button {
         }
         .info {
           font-size: clamp(11px, 3.7vw, 20px);
+          &.on {
+            height: 110px;
+          }
         }
       }
       .law {
