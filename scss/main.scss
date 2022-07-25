@@ -19,12 +19,12 @@ p {
   padding-top: 130px;
   ul {
     li {
+      display: flex;
       width: 100%;
       height: 71.5vh;
       background-position: 50% 50%;
-      background-size: cover;
       background-repeat: no-repeat;
-      display: flex;
+      background-size: cover;
       &.visual01 video {
         width: 100%;
         object-fit: cover;
@@ -39,26 +39,26 @@ p {
         background-image: url(../images/main/mainVisual01.jpg);
       }
       .textBox {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         width: 100%;
-        text-align: center;
         margin: 0 auto 80px auto;
+        text-align: center;
         color: #fff;
         user-select: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         h2 {
-          text-transform: uppercase;
+          font-family: "Montserrat";
           font-size: 70px;
           font-weight: 700;
+          text-transform: uppercase;
           pointer-events: none;
-          font-family: "Montserrat";
         }
         p {
           margin-top: 30px;
           font-size: 17px;
-          line-height: 1.5;
           font-weight: 400;
+          line-height: 1.5;
           pointer-events: none;
         }
         a {
@@ -76,31 +76,31 @@ p {
             }
           }
           span {
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 18px;
-            letter-spacing: -0.05em;
             display: inline-block;
             position: relative;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
             &::before {
-              content: "";
-              background-color: #fff;
               width: 0;
               height: 2px;
               position: absolute;
               bottom: -10px;
               left: 0;
               transition: width 0.15s ease-in-out;
-            }
-            &::after {
               content: "";
               background-color: #fff;
+            }
+            &::after {
               width: 100%;
               height: 2px;
               position: absolute;
-              bottom: -10px;
               right: 0;
+              bottom: -10px;
               transition: width 0.15s ease-in-out;
+              content: "";
+              background-color: #fff;
             }
           }
         }
@@ -123,32 +123,32 @@ p {
   }
   .btns {
     button {
+      width: 48px;
+      height: 48px;
       position: absolute;
       top: 55%;
       z-index: 100;
       border: 3px solid rgba(230, 230, 230, 0.3);
-      width: 48px;
-      height: 48px;
-      border-radius: 50px;
       background: none;
       transition: all 0.25s ease-in-out;
+      border-radius: 50px;
       &::before {
+        position: absolute;
+        top: 50%;
+        left: 20%;
         font-family: "Material icons";
         font-size: 24px;
         color: rgba(255, 255, 255, 0.5);
-        position: absolute;
-        top: 50%;
         transform: translateY(-50%);
-        left: 20%;
       }
       &:after {
+        display: none;
+        position: absolute;
+        top: 50%;
         font-family: "Material icons";
         font-size: 24px;
         color: #fff;
-        position: absolute;
-        top: 50%;
         transform: translateY(-50%);
-        display: none;
       }
       &:hover {
         width: 110px;
@@ -160,12 +160,12 @@ p {
           display: block;
         }
         &.prev span {
-          opacity: 1;
           left: 50%;
+          opacity: 1;
         }
         &.next span {
-          opacity: 1;
           right: 50%;
+          opacity: 1;
         }
       }
       &.prev {
@@ -174,8 +174,8 @@ p {
           content: "\e5cb";
         }
         &::after {
-          content: "\e5cb";
           left: 20%;
+          content: "\e5cb";
         }
         span {
           left: 0;
@@ -187,21 +187,21 @@ p {
           content: "\e5cc";
         }
         &::after {
-          content: "\e5cc";
           right: 20%;
+          content: "\e5cc";
         }
         span {
           right: 0;
         }
       }
       span {
+        position: absolute;
+        top: 50%;
         font-size: 14px;
         font-weight: 700;
         color: #fff;
-        top: 50%;
         transform: translateY(-50%);
         opacity: 0;
-        position: absolute;
         transition: all 0.3s ease;
       }
     }
@@ -209,8 +209,8 @@ p {
   .pagination {
     position: absolute;
     bottom: 7.5%;
-    text-align: center;
     z-index: 100;
+    text-align: center;
     .swiper-pagination-bullet {
       width: 27px;
       height: 6px;
@@ -231,80 +231,80 @@ p {
     #new {
       position: relative;
       .search {
-        transition: background-color 0.5s ease-in-out;
-        border: 3px solid #000;
         display: block;
         width: 100%;
         height: 100%;
+        border: 3px solid #000;
         box-sizing: border-box;
+        transition: background-color 0.5s ease-in-out;
         border-radius: 120px;
         pointer-events: none;
         &:hover {
-          background-color: #000;
           color: #fff;
+          background-color: #000;
         }
         ul {
           li {
             width: 100%;
-            box-sizing: border-box;
             padding-right: 100px;
+            box-sizing: border-box;
             a {
-              width: 100%;
               display: block;
+              width: 100%;
               height: 110px;
               line-height: 110px;
               .textBox {
                 display: flex;
                 font-size: 22px;
                 .title {
-                  font-weight: 700;
-                  margin-left: 70px;
-                  position: relative;
                   width: 200px;
+                  position: relative;
+                  margin-left: 70px;
                   padding-right: 50px;
+                  font-weight: 700;
                   &:after {
-                    content: "";
                     display: block;
                     width: 1px;
                     height: 18px;
-                    background-color: #ddd;
                     position: absolute;
                     top: 50%;
-                    transform: translateY(-50%);
                     right: 0;
+                    transform: translateY(-50%);
+                    content: "";
+                    background-color: #ddd;
                   }
                 }
                 .desc {
-                  margin-left: 30px;
                   position: relative;
+                  overflow: hidden;
+                  margin-left: 30px;
                   letter-spacing: -2px;
                   text-overflow: ellipsis;
-                  overflow: hidden;
                   white-space: nowrap;
                   word-break: break-all;
                   &::before {
-                    content: "";
                     display: block;
-                    height: 18px;
                     width: 1px;
-                    background-color: #ccc;
+                    height: 18px;
                     position: absolute;
-                    left: -30px;
                     top: 50%;
+                    left: -30px;
                     transform: translateY(-50%);
+                    content: "";
+                    background-color: #ccc;
                   }
                 }
               }
               &::after {
-                content: "\f1df";
+                position: absolute;
+                top: 50%;
+                right: 50px;
                 font-family: "Material Icons";
                 font-size: 35px;
-                position: absolute;
-                right: 50px;
-                top: 50%;
-                transform: translateY(-50%);
                 color: #000;
+                transform: translateY(-50%);
                 transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+                content: "\f1df";
               }
               &:hover::after {
                 color: #fff;
@@ -316,19 +316,19 @@ p {
       }
     }
     .nav {
+      display: flex;
+      align-items: center;
       position: absolute;
       top: 30%;
       right: 0;
-      display: flex;
-      align-items: center;
       button {
         padding: 0;
       }
       .pagination {
-        color: #9a9a9d;
         width: auto;
         font-size: 22px;
         font-weight: 500;
+        color: #9a9a9d;
       }
     }
   }
@@ -344,15 +344,15 @@ p {
       margin-bottom: 50px;
       .title {
         &::before {
-          content: "";
           display: block;
           width: 9px;
           height: 9px;
-          border-radius: 100%;
-          background-color: #ccc;
           position: absolute;
           top: -30px;
           left: 50%;
+          content: "";
+          border-radius: 100%;
+          background-color: #ccc;
         }
         h2 {
           font-size: 55px;
@@ -391,19 +391,19 @@ p {
       .contentsWrap {
         .textBox {
           p {
+            margin-bottom: 30px;
             font-size: 18px;
             line-height: 1.5;
-            margin-bottom: 30px;
             word-break: keep-all;
           }
           a {
-            font-size: 15px;
+            display: inline-block;
+            margin-bottom: 80px;
             padding: 20px 25px;
             border: 3px solid #dddddd;
             box-sizing: border-box;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 80px;
-            display: inline-block;
             transition: all 0.5s ease-in-out;
             &:hover {
               border-radius: 150px;
@@ -422,8 +422,8 @@ p {
             flex-wrap: wrap;
             li {
               width: calc(25% - 34px);
-              margin-right: 45px;
               position: relative;
+              margin-right: 45px;
               &:nth-child(4) {
                 margin-right: 0;
               }
@@ -433,46 +433,46 @@ p {
               a {
                 &:hover {
                   &.zoom img {
-                    transition: all 0.7s ease-in-out;
                     transform: scale(1.05);
+                    transition: all 0.7s ease-in-out;
                   }
                 }
                 p {
-                  font-size: 20px;
-                  text-align: center;
                   margin: 25px 0 50px 0;
+                  font-size: 20px;
                   font-weight: 500;
+                  text-align: center;
                   &.letter {
                     position: absolute;
-                    color: #fff;
-                    font-weight: 700;
-                    line-height: 1.5;
                     font-size: clamp(16px, 1.1vw, 22px);
+                    font-weight: 700;
+                    color: #fff;
+                    line-height: 1.5;
                   }
                 }
               }
               .imgBox {
                 position: relative;
                 &:before {
-                  content: "";
                   display: block;
                   padding-top: 100%;
+                  content: "";
                 }
                 img {
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                  object-fit: cover;
                   width: 100%;
                   height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  object-fit: cover;
                 }
               }
               .box {
                 position: relative;
                 &::before {
-                  content: "";
                   display: block;
                   padding-top: 100%;
+                  content: "";
                 }
                 .boxInner {
                   width: 100%;
@@ -481,11 +481,11 @@ p {
                   top: 0;
                   left: 0;
                   span {
-                    font-weight: 700;
-                    font-size: clamp(30px, 2vw, 40px);
                     position: absolute;
                     top: 50%;
                     left: 50%;
+                    font-size: clamp(30px, 2vw, 40px);
+                    font-weight: 700;
                     transform: translate(-50%, -50%);
                   }
                 }
@@ -546,24 +546,24 @@ p {
             .selectBtn {
               display: block;
               width: 90%;
-              border: 3px solid #dedede;
-              border-radius: 45px;
               height: 90px;
-              padding: 0 40px;
-              transition: border-color 0.25s ease-in-out;
               position: relative;
+              padding: 0 40px;
+              border: 3px solid #dedede;
+              transition: border-color 0.25s ease-in-out;
+              border-radius: 45px;
               &:hover {
                 border-color: #000;
               }
               &::after {
-                content: "\e5cf";
-                font-family: "Material Icons";
-                font-weight: 500;
-                font-size: 30px;
                 position: absolute;
                 top: 50%;
-                transform: translateY(-50%) rotate(0);
                 right: 10%;
+                font-family: "Material Icons";
+                font-size: 30px;
+                font-weight: 500;
+                transform: translateY(-50%) rotate(0);
+                content: "\e5cf";
               }
               span {
                 display: flex;
@@ -571,8 +571,8 @@ p {
                 font-weight: 700;
               }
               &.open {
-                border-color: #000;
                 border-bottom: none;
+                border-color: #000;
                 border-radius: 45px 45px 0 0;
                 &::after {
                   transform: translateY(-50%) rotate(-180deg);
@@ -581,19 +581,19 @@ p {
             }
             .selectList {
               display: none;
-              border: 3px solid #000;
-              height: 210px;
-              border-radius: 0 0 50px 50px;
-              border-top: none;
-              background-color: #fff;
               width: 90%;
+              height: 210px;
+              border: 3px solid #000;
+              border-top: none;
+              border-radius: 0 0 50px 50px;
+              background-color: #fff;
               &.open {
                 display: block;
               }
               li {
-                font-weight: 500;
-                font-size: 20px;
                 padding: 25px 40px 0 40px;
+                font-size: 20px;
+                font-weight: 500;
                 .etc {
                   display: block;
                   color: #9a9a9d;
@@ -603,30 +603,30 @@ p {
                   }
                 }
                 .all {
-                  color: #000;
                   display: block;
+                  color: #000;
                 }
               }
             }
           }
         }
         .textBox {
-          background-color: #f4f4f4;
-          flex-basis: 70%;
-          margin-right: 10px;
-          box-sizing: border-box;
-          border-radius: 100px 0 0 100px;
-          padding-left: 30px;
           display: flex;
           justify-content: flex-start;
+          flex-basis: 70%;
+          margin-right: 10px;
+          padding-left: 30px;
+          box-sizing: border-box;
+          background-color: #f4f4f4;
+          border-radius: 100px 0 0 100px;
           input {
-            font-size: 20px;
-            font-family: "Noto Sans KR", sans-serif;
-            background: none;
-            border: none;
             width: 100%;
-            outline: none;
+            border: none;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 20px;
             font-weight: 500;
+            background: none;
+            outline: none;
             &:focus {
               &::placeholder {
                 color: transparent;
@@ -640,11 +640,11 @@ p {
           .searchBtn {
             width: 100%;
             height: 100%;
-            background-color: #000;
-            border-radius: 0 100px 100px 0;
             font-size: 20px;
             font-weight: 700;
             color: #fff;
+            background-color: #000;
+            border-radius: 0 100px 100px 0;
           }
           &.mobileSearchBtn {
             display: none;
@@ -652,15 +652,15 @@ p {
         }
       }
       .tagList {
-        margin: 30px 0 0 120px;
-        justify-content: center;
         display: flex;
-        font-weight: 500;
+        justify-content: center;
+        margin: 30px 0 0 120px;
         font-family: "Noto Sans KR", sans-serif;
+        font-weight: 500;
         span {
-          word-break: keep-all;
           margin-right: 30px;
           font-weight: 600;
+          word-break: keep-all;
         }
         ul {
           display: flex;
@@ -688,8 +688,8 @@ p {
       .title {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 40px;
         align-items: flex-end;
+        margin-bottom: 40px;
         a {
           display: flex;
           align-items: center;
@@ -710,56 +710,56 @@ p {
               margin-right: 30px;
             }
             a {
-              width: clamp(250px, 20vw, 361px);
               display: block;
+              width: clamp(250px, 20vw, 361px);
               &:hover img {
                 transform: scale(1.1);
               }
               .imgBox {
                 position: relative;
                 &:before {
-                  content: "";
                   display: block;
                   padding-top: 100%;
+                  content: "";
                 }
                 img {
-                  transition: all 0.7s ease;
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                  object-fit: cover;
                   width: 100%;
                   height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  transition: all 0.7s ease;
+                  object-fit: cover;
                 }
               }
               .desc {
                 margin-top: 30px;
                 .title {
                   display: block;
+                  overflow: hidden;
+                  margin-bottom: 20px;
                   font-size: clamp(18px, 1.2vw, 22px);
                   font-weight: 700;
                   text-overflow: ellipsis;
-                  overflow: hidden;
                   white-space: nowrap;
                   word-break: break-all;
-                  margin-bottom: 20px;
                 }
                 p {
-                  font-weight: 400;
-                  font-size: clamp(15px, 1vw, 18px);
-                  color: #666;
-                  line-height: 1.5;
+                  display: -webkit-box;
                   height: 3em;
                   overflow: hidden;
-                  -webkit-box-orient: vertical;
-                  display: -webkit-box;
-                  -webkit-line-clamp: 2;
                   margin-bottom: 40px;
+                  font-size: clamp(15px, 1vw, 18px);
+                  font-weight: 400;
+                  color: #666;
+                  line-height: 1.5;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 2;
                 }
                 .date {
+                  font-family: "Montserrat", sans-serif;
                   font-size: clamp(12px, 0.8vw, 15px);
                   font-weight: 600;
-                  font-family: "Montserrat", sans-serif;
                   color: #bbb;
                 }
               }
@@ -776,26 +776,26 @@ p {
         .imgBox {
           position: relative;
           &:before {
-            content: "";
             display: block;
             padding-top: 100%;
+            content: "";
           }
           img {
-            object-fit: cover;
             width: 100%;
             height: 100%;
             position: absolute;
             top: 0;
             left: 0;
+            object-fit: cover;
             border-radius: 100%;
           }
         }
         .desc {
-          font-weight: 700;
+          margin-top: 30px;
           font-size: clamp(18px, 1.2vw, 22px);
+          font-weight: 700;
           text-align: center;
           line-height: 1.5;
-          margin-top: 30px;
         }
       }
       .snsList {
@@ -807,25 +807,25 @@ p {
         }
         a {
           display: flex;
-          align-items: center;
           justify-content: center;
-          border: 1px solid #ddd;
-          border-radius: 50%;
+          align-items: center;
           width: clamp(40px, 3.3vw, 60px);
           height: clamp(40px, 3.3vw, 60px);
+          border: 1px solid #ddd;
           transition: all 0.25s ease-in-out;
+          border-radius: 50%;
           &:hover {
-            background-color: #000;
             border-color: #000;
+            background-color: #000;
             i {
               color: #fff;
             }
           }
           i {
-            transition: all 0.25s ease-in-out;
             font-size: clamp(18px, 1.2vw, 23px);
             font-weight: 900;
             color: #aaa;
+            transition: all 0.25s ease-in-out;
           }
         }
       }
@@ -835,16 +835,16 @@ p {
 
 @keyframes arrowAni {
   0% {
-    opacity: 0.5;
     right: 20px;
+    opacity: 0.5;
   }
   50% {
-    opacity: 0;
     right: 70px;
+    opacity: 0;
   }
   100% {
-    opacity: 1;
     right: 50px;
+    opacity: 1;
   }
 }
 @media all and(max-width:1870px) {
@@ -919,8 +919,8 @@ p {
           font-size: clamp(14px, 1.2vw, 18px);
         }
         a {
-          font-size: clamp(11px, 1vw, 15px);
           padding: clamp(15px, 1.3vw, 20px) clamp(20px, 1.6vw, 25px);
+          font-size: clamp(11px, 1vw, 15px);
         }
       }
     }
@@ -995,13 +995,13 @@ p {
         .mobileSearchBtn {
           display: block;
           position: absolute;
-          right: 40px;
           top: 50%;
+          right: 40px;
           transform: translateY(-50%);
           .material-icons {
-            color: #000;
-            font-weight: 700;
             font-size: 30px;
+            font-weight: 700;
+            color: #000;
           }
         }
       }
@@ -1036,29 +1036,29 @@ p {
       }
       ul li {
         a {
-          padding: clamp(40px, 6.9vw, 60px) clamp(20px, 4.6vw, 40px);
           width: 100vw;
           height: auto;
+          padding: clamp(40px, 6.9vw, 60px) clamp(20px, 4.6vw, 40px);
           line-height: 2;
           background-color: #000;
           .textBox {
             flex-direction: column;
             .title {
               width: 100%;
+              margin-left: 0;
               padding-right: 0;
               font-size: clamp(14px, 2.5vw, 22px);
-              color: #fff;
               font-weight: 700;
-              margin-left: 0;
+              color: #fff;
               &:after {
                 display: none;
               }
             }
             .desc {
-              color: #fff;
-              font-weight: 400;
-              font-size: clamp(14px, 2.5vw, 22px);
               margin-left: 0;
+              font-size: clamp(14px, 2.5vw, 22px);
+              font-weight: 400;
+              color: #fff;
             }
           }
           &:after {
@@ -1107,6 +1107,7 @@ p {
     padding: 0 clamp(20px, 4.6vw, 40px);
   }
   #newsSns .container {
+    flex-direction: column;
     .title {
       h2 {
         font-size: clamp(26px, 4.5vw, 39px);
@@ -1115,7 +1116,6 @@ p {
         font-size: clamp(12px, 2vw, 18px);
       }
     }
-    flex-direction: column;
     #news .mainNews .newsList {
       justify-content: space-between;
       li a {
@@ -1138,8 +1138,8 @@ p {
     }
     #sns {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      flex-direction: column;
       margin-top: 130px;
       .title {
         position: relative;
@@ -1153,25 +1153,25 @@ p {
       .snsList li {
         position: relative;
         &::after {
-          content: "";
           width: 1px;
           height: 10px;
-          background-color: #ddd;
           position: absolute;
-          right: -15px;
           top: 50%;
+          right: -15px;
           transform: translateY(-50%);
+          content: "";
+          background-color: #ddd;
         }
         &:nth-child(3):after {
           display: none;
         }
         a {
-          border: none;
           width: clamp(37px, 3.3vw, 60px);
           height: clamp(37px, 3.3vw, 60px);
+          border: none;
           &:hover {
-            background-color: none;
             border-color: none;
+            background-color: none;
             i {
               color: #aaa;
             }
@@ -1206,14 +1206,14 @@ p {
           font-size: clamp(15px, 4.8vw, 26px);
         }
         .desc {
-          font-size: clamp(13px, 4.2vw, 23px);
           width: 80%;
+          font-size: clamp(13px, 4.2vw, 23px);
         }
       }
     }
     .nav {
-      bottom: -40px;
       align-items: flex-end;
+      bottom: -40px;
       button {
         display: none;
       }
@@ -1232,8 +1232,8 @@ p {
           line-height: 2;
         }
         a {
-          font-size: clamp(11px, 3.7vw, 20px);
           padding: clamp(16px, 4.6vw, 25px) clamp(32px, 9.2vw, 50px);
+          font-size: clamp(11px, 3.7vw, 20px);
         }
       }
       .contents .list {
@@ -1290,8 +1290,8 @@ p {
           width: clamp(39px, 13vw, 73px);
           height: clamp(39px, 13vw, 73px);
           i {
-            color: #aaa;
             font-size: clamp(18px, 5.5vw, 30px);
+            color: #aaa;
           }
         }
       }

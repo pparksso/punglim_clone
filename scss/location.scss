@@ -2,18 +2,18 @@
   padding-top: 130px;
   .container {
     .title {
-      font-weight: 700;
-      font-size: clamp(50px, 4.2vw, 82px);
       padding-top: clamp(35px, 7.2vw, 140px);
+      font-size: clamp(50px, 4.2vw, 82px);
+      font-weight: 700;
     }
     .locationTabs {
       margin: clamp(33px, 3.4vw, 66px) 0 clamp(30px, 5.2vw, 100px) 0;
       .list {
         display: flex;
-        font-weight: 700;
-        word-break: keep-all;
         font-size: clamp(18px, 1.3vw, 26px);
+        font-weight: 700;
         color: #999;
+        word-break: keep-all;
         li {
           padding: 0 22px;
           &:nth-child(1) {
@@ -22,16 +22,16 @@
           a {
             position: relative;
             &::before {
-              content: "";
+              display: none;
               width: 6px;
               height: 6px;
-              border-radius: 100%;
-              background-color: #000;
               position: absolute;
               top: -15px;
               left: 50%;
               transform: translateX(-50%);
-              display: none;
+              content: "";
+              border-radius: 100%;
+              background-color: #000;
             }
             &.on {
               color: #000;
@@ -45,66 +45,66 @@
     }
 
     #map {
-      height: 550px;
       width: 100%;
+      height: 550px;
       .overlay {
-        text-align: center;
-        background-color: #000;
+        position: relative;
         padding: 20px;
-        color: #fff;
         font-family: "Noto Sans KR", sans-serif;
         font-weight: 700;
+        text-align: center;
+        color: #fff;
+        background-color: #000;
         border-radius: 20px;
-        position: relative;
         &::before {
-          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
           z-index: -1;
           border-top: 40px solid #000;
-          border-left: 30px solid transparent;
           border-right: 30px solid transparent;
           border-bottom: none;
-          bottom: -10px;
-          position: absolute;
-          left: 50%;
+          border-left: 30px solid transparent;
           transform: translateX(-50%);
+          content: "";
         }
       }
     }
     .pannel {
-      margin-bottom: clamp(100px, 10vw, 200px);
       display: none;
+      margin-bottom: clamp(100px, 10vw, 200px);
       &.on {
         display: block;
       }
       .contactInfo {
-        margin-top: 80px;
         display: flex;
         justify-content: space-between;
+        margin-top: 80px;
         .company,
         .transport {
           flex-basis: 50%;
         }
         h2 {
+          margin-bottom: 42px;
           font-size: clamp(22px, 1.6vw, 32px);
           font-weight: 700;
-          margin-bottom: 42px;
         }
         .subtitle {
+          position: relative;
+          margin-bottom: 16px;
           font-size: clamp(12px, 0.9vw, 18px);
           font-weight: 500;
-          margin-bottom: 16px;
-          position: relative;
           &::before {
-            content: "";
             display: block;
             width: 5px;
             height: 5px;
-            background-color: #000;
-            border-radius: 100%;
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
             left: -13px;
+            transform: translateY(-50%);
+            content: "";
+            background-color: #000;
+            border-radius: 100%;
           }
         }
         li {
@@ -114,34 +114,34 @@
           p,
           address {
             font-size: clamp(12px, 0.9vw, 18px);
-            color: #666;
             font-weight: 400;
+            color: #666;
             line-height: 2;
             word-break: keep-all;
           }
           .num {
-            padding-left: clamp(20px, 1.8vw, 35px);
             position: relative;
+            padding-left: clamp(20px, 1.8vw, 35px);
             &::before {
-              content: "";
               display: block;
               width: clamp(18px, 1.3vw, 26px);
               height: clamp(18px, 1.3vw, 26px);
-              background-color: #ccc;
-              border-radius: 100%;
               position: absolute;
               top: 50%;
-              transform: translateY(-50%);
               left: 0;
+              transform: translateY(-50%);
+              content: "";
+              background-color: #ccc;
+              border-radius: 100%;
             }
             &::after {
               display: inline;
-              color: #fff;
               position: absolute;
-              font-weight: 700;
+              top: 50%;
               left: clamp(7px, 0.5vw, 10px);
               font-size: clamp(10px, 0.7vw, 15px);
-              top: 50%;
+              font-weight: 700;
+              color: #fff;
               transform: translateY(-50%);
             }
           }
@@ -163,19 +163,19 @@
         }
       }
       a {
+        display: inline-block;
+        margin-left: 15px;
+        padding: 22px 32px;
+        border: 3px solid #ddd;
+        box-sizing: border-box;
         font-size: clamp(11px, 0.8vw, 16px);
         font-weight: 700;
-        display: inline-block;
         color: #222;
-        border: 3px solid #ddd;
-        padding: 22px 32px;
-        margin-left: 15px;
-        box-sizing: border-box;
         transition: all 0.25s ease-in-out;
         &:hover {
-          border-radius: 40px;
           border-color: #000;
           color: #000;
+          border-radius: 40px;
         }
       }
     }
@@ -273,22 +273,22 @@
               width: clamp(18px, 4.8vw, 26px);
               height: clamp(18px, 4.8vw, 26px);
               top: 0;
-              transform: translateY(30%);
               left: -10px;
+              transform: translateY(30%);
             }
             &:after {
-              left: clamp(7px, 1.8vw, 10px);
-              font-size: clamp(10px, 2.7vw, 15px);
               top: 0;
-              transform: translateY(30%);
+              left: clamp(7px, 1.8vw, 10px);
               left: -3px;
+              font-size: clamp(10px, 2.7vw, 15px);
+              transform: translateY(30%);
             }
           }
         }
       }
       a {
-        font-size: clamp(10px, 3.7vw, 20px);
         padding: clamp(10px, 2.7vw, 15px) clamp(25px, 7.4vw, 40px);
+        font-size: clamp(10px, 3.7vw, 20px);
       }
     }
   }
