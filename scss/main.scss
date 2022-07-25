@@ -3,6 +3,7 @@
   font-size: 48px;
   font-weight: 700;
   line-height: 60px;
+  word-break: keep-all;
 }
 h2 {
   font-size: 40px;
@@ -347,7 +348,7 @@ p {
           display: block;
           width: 9px;
           height: 9px;
-          border-radius: 18px;
+          border-radius: 100%;
           background-color: #ccc;
           position: absolute;
           top: -30px;
@@ -1174,6 +1175,123 @@ p {
             i {
               color: #aaa;
             }
+          }
+        }
+      }
+    }
+  }
+}
+@media all and(max-width:540px) {
+  .subtitle {
+    font-size: clamp(27px, 8.5vw, 46px);
+    line-height: clamp(36px, 10vh, 57px);
+  }
+  #mainVisual .swiper ul li .textBox {
+    padding: 0 20px;
+    h2 {
+      font-size: clamp(40px, 12vw, 66px);
+    }
+    p {
+      font-size: clamp(16px, 4.8vw, 26px);
+    }
+    a {
+      font-size: clamp(12px, 3.7vw, 20px);
+    }
+  }
+  #update .container {
+    #new .search ul li a {
+      padding: clamp(29px, 9.2vw, 50px) clamp(19px, 5.9vw, 32px);
+      .textBox {
+        .title {
+          font-size: clamp(15px, 4.8vw, 26px);
+        }
+        .desc {
+          font-size: clamp(13px, 4.2vw, 23px);
+          width: 80%;
+        }
+      }
+    }
+    .nav {
+      bottom: -40px;
+      align-items: flex-end;
+      button {
+        display: none;
+      }
+    }
+  }
+  #business .container {
+    .titleBox .title {
+      h2 {
+        font-size: clamp(30px, 9.4vw, 51px);
+      }
+    }
+    .pannel .contentsWrap {
+      .textBox {
+        p {
+          font-size: clamp(13px, 4.2vw, 23px);
+          line-height: 2;
+        }
+        a {
+          font-size: clamp(11px, 3.7vw, 20px);
+          padding: clamp(16px, 4.6vw, 25px) clamp(32px, 9.2vw, 50px);
+        }
+      }
+      .contents .list {
+        flex-direction: column;
+        li {
+          width: 100%;
+          a {
+            p {
+              font-size: clamp(14px, 4.2vw, 23px);
+            }
+          }
+          .box {
+            display: none;
+          }
+          .medicineHidden {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  #newsSns .container {
+    .title {
+      h2 {
+        font-size: clamp(25px, 8.3vw, 45px);
+      }
+      a {
+        font-size: clamp(10px, 3.5vw, 19px);
+      }
+    }
+    #news .mainNews .newsList {
+      justify-content: space-between;
+      li a {
+        width: clamp(130px, 42vw, 230px);
+        .desc {
+          .title {
+            font-size: clamp(14px, 4.2vw, 23px);
+          }
+          p {
+            display: none;
+          }
+          .date {
+            font-size: clamp(12px, 3.5vw, 19px);
+          }
+        }
+      }
+    }
+    #sns {
+      .snsMain a .desc {
+        font-size: clamp(14px, 4vw, 22px);
+      }
+      .snsList li {
+        a {
+          width: clamp(39px, 13vw, 73px);
+          height: clamp(39px, 13vw, 73px);
+          i {
+            color: #aaa;
+            font-size: clamp(18px, 5.5vw, 30px);
           }
         }
       }

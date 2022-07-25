@@ -2,6 +2,7 @@ body {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   color: #000;
   font-size: 18px;
+  overflow-x: hidden;
 }
 
 a {
@@ -166,6 +167,7 @@ button .material-icons {
 }
 
 #subHeader {
+  overflow-y: auto;
   display: none;
   color: #fff;
   background-image: url("../images/common/mobile-menu-bg.jpg");
@@ -454,7 +456,7 @@ button .material-icons {
     display: block;
   }
   #footer {
-    padding: 78px 0;
+    padding: clamp(33px, 14vw, 78px) 0;
   }
   #footer .container .title {
     display: none;
@@ -466,6 +468,78 @@ button .material-icons {
     margin-top: 0;
   }
   #footer .container .footerRight .law .privacy {
-    margin-bottom: 78px;
+    margin-bottom: clamp(10px, 4vw, 78px);
+  }
+}
+@media all and (max-width: 540px) {
+  .container {
+    width: 87%;
+  }
+  #header {
+    height: 147px;
+  }
+  #logo a svg {
+    width: clamp(100px, 45vw, 244px);
+    height: clamp(3px, 6.2vw, 34px);
+  }
+  #gnbBtns {
+    margin-right: 50px;
+  }
+  #gnbBtns ul li a .material-icons {
+    font-size: clamp(10px, 6.8vw, 37px);
+  }
+  #gnbBtns ul li.hamberger span {
+    width: clamp(10px, 6.4vw, 35px);
+    height: clamp(0.5px, 0.7vh, 4px);
+  }
+  #gnbBtns ul li.hamberger span:nth-child(1) {
+    top: 40px;
+  }
+  #subHeader .container .headerTop {
+    height: 147px;
+  }
+  #subHeader .container .headerTop .langList {
+    padding-left: 30px;
+  }
+  #subHeader .container .headerTop .langList li {
+    font-size: clamp(11px, 3.7vw, 20px);
+  }
+  #subHeader .container .headerTop .hamberger {
+    margin-right: 50px;
+  }
+  #subHeader .container .headerTop .hamberger span {
+    width: clamp(10px, 6.4vw, 35px);
+    height: clamp(0.5px, 0.7vh, 4px);
+  }
+  #subHeader .container .list {
+    padding-left: 30px;
+  }
+  #subHeader .container .list li {
+    padding-bottom: 50px;
+  }
+  #subHeader .container .list li .depth01 {
+    font-size: clamp(26px, 9vw, 49px);
+    font-weight: 500;
+  }
+  #subHeader .container .list li .depth02 {
+    font-size: clamp(12px, 4.2vw, 23px);
+  }
+  #footer {
+    padding: 33px 0;
+  }
+  #footer .container .footerRight .infoWrap .richwood {
+    font-size: clamp(18px, 5.9vw, 32px);
+  }
+  #footer .container .footerRight .infoWrap .richwood:after {
+    font-size: clamp(18px, 5.9vw, 32px);
+  }
+  #footer .container .footerRight .infoWrap .info {
+    font-size: clamp(11px, 3.7vw, 20px);
+  }
+  #footer .container .footerRight .law .privacy {
+    font-size: clamp(11px, 3.5vw, 19px);
+  }
+  #footer .container .footerRight .law p {
+    font-size: clamp(10px, 2.9vw, 16px);
   }
 }

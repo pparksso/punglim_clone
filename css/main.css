@@ -3,6 +3,7 @@
   font-size: 48px;
   font-weight: 700;
   line-height: 60px;
+  word-break: keep-all;
 }
 
 h2 {
@@ -328,7 +329,7 @@ p {
   display: block;
   width: 9px;
   height: 9px;
-  border-radius: 18px;
+  border-radius: 100%;
   background-color: #ccc;
   position: absolute;
   top: -30px;
@@ -1078,5 +1079,98 @@ p {
   }
   #newsSns .container #sns .snsList li a:hover i {
     color: #aaa;
+  }
+}
+@media all and (max-width: 540px) {
+  .subtitle {
+    font-size: clamp(27px, 8.5vw, 46px);
+    line-height: clamp(36px, 10vh, 57px);
+  }
+  #mainVisual .swiper ul li .textBox {
+    padding: 0 20px;
+  }
+  #mainVisual .swiper ul li .textBox h2 {
+    font-size: clamp(40px, 12vw, 66px);
+  }
+  #mainVisual .swiper ul li .textBox p {
+    font-size: clamp(16px, 4.8vw, 26px);
+  }
+  #mainVisual .swiper ul li .textBox a {
+    font-size: clamp(12px, 3.7vw, 20px);
+  }
+  #update .container #new .search ul li a {
+    padding: clamp(29px, 9.2vw, 50px) clamp(19px, 5.9vw, 32px);
+  }
+  #update .container #new .search ul li a .textBox .title {
+    font-size: clamp(15px, 4.8vw, 26px);
+  }
+  #update .container #new .search ul li a .textBox .desc {
+    font-size: clamp(13px, 4.2vw, 23px);
+    width: 80%;
+  }
+  #update .container .nav {
+    bottom: -40px;
+    align-items: flex-end;
+  }
+  #update .container .nav button {
+    display: none;
+  }
+  #business .container .titleBox .title h2 {
+    font-size: clamp(30px, 9.4vw, 51px);
+  }
+  #business .container .pannel .contentsWrap .textBox p {
+    font-size: clamp(13px, 4.2vw, 23px);
+    line-height: 2;
+  }
+  #business .container .pannel .contentsWrap .textBox a {
+    font-size: clamp(11px, 3.7vw, 20px);
+    padding: clamp(16px, 4.6vw, 25px) clamp(32px, 9.2vw, 50px);
+  }
+  #business .container .pannel .contentsWrap .contents .list {
+    flex-direction: column;
+  }
+  #business .container .pannel .contentsWrap .contents .list li {
+    width: 100%;
+  }
+  #business .container .pannel .contentsWrap .contents .list li a p {
+    font-size: clamp(14px, 4.2vw, 23px);
+  }
+  #business .container .pannel .contentsWrap .contents .list li .box {
+    display: none;
+  }
+  #business .container .pannel .contentsWrap .contents .list li .medicineHidden {
+    display: none;
+  }
+  #newsSns .container .title h2 {
+    font-size: clamp(25px, 8.3vw, 45px);
+  }
+  #newsSns .container .title a {
+    font-size: clamp(10px, 3.5vw, 19px);
+  }
+  #newsSns .container #news .mainNews .newsList {
+    justify-content: space-between;
+  }
+  #newsSns .container #news .mainNews .newsList li a {
+    width: clamp(130px, 42vw, 230px);
+  }
+  #newsSns .container #news .mainNews .newsList li a .desc .title {
+    font-size: clamp(14px, 4.2vw, 23px);
+  }
+  #newsSns .container #news .mainNews .newsList li a .desc p {
+    display: none;
+  }
+  #newsSns .container #news .mainNews .newsList li a .desc .date {
+    font-size: clamp(12px, 3.5vw, 19px);
+  }
+  #newsSns .container #sns .snsMain a .desc {
+    font-size: clamp(14px, 4vw, 22px);
+  }
+  #newsSns .container #sns .snsList li a {
+    width: clamp(39px, 13vw, 73px);
+    height: clamp(39px, 13vw, 73px);
+  }
+  #newsSns .container #sns .snsList li a i {
+    color: #aaa;
+    font-size: clamp(18px, 5.5vw, 30px);
   }
 }

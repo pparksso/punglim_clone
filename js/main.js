@@ -4,8 +4,8 @@ const select = document.querySelector("#recommend .selectBtn");
 const selectList = document.querySelector("#recommend .selectList");
 let siblings = [];
 
-new Swiper("#mainVisual .swiper", {
-  effect: "fade", //slide, fade, cube, coverflow, card
+const mainVisualSwiper = new Swiper("#mainVisual .swiper", {
+  effect: "fade",
   speed: 1000,
   loop: true,
   navigation: {
@@ -22,6 +22,20 @@ new Swiper("#mainVisual .swiper", {
     clickable: true,
   },
 });
+
+// const pagingSwiper = new Swiper("#mainVisual .swiper", {
+//   pagination: {
+//     el: "#mainVisual .pagination02",
+//     type: "fraction",
+//     formatFractionCurrent: function (number) {
+//       return `0${number}`;
+//     },
+//     formatFractionTotal: function (number) {
+//       return `0${number}`;
+//     },
+//   },
+// });
+// mainVisualSwiper.controller.control = pagingSwiper;
 
 new Swiper("#update .search", {
   effect: "fade",
