@@ -166,13 +166,21 @@ button .material-icons {
 }
 
 #subHeader {
+  display: none;
   color: #fff;
   background-image: url("../images/common/mobile-menu-bg.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
+  transition: all 0.25s ease;
+}
+#subHeader.open {
+  display: block;
 }
 #subHeader .container {
   display: flex;
@@ -235,7 +243,7 @@ button .material-icons {
   font-size: 16px;
   font-weight: 400;
   color: #999;
-  padding: 10px 0;
+  margin: 10px 0;
 }
 #subHeader .container .list li .depth02.open {
   display: block;
@@ -295,6 +303,7 @@ button .material-icons {
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   position: relative;
+  padding: 0;
 }
 #footer .container .footerRight .infoWrap .richwood::after {
   content: "\e5ce";
@@ -304,11 +313,11 @@ button .material-icons {
   font-weight: 500;
   top: 50%;
   right: -25px;
-  transform: translateY(-50%) rotate(0);
+  transform: translateY(-50%) rotate(180deg);
   transition: transform 0.25s ease;
 }
 #footer .container .footerRight .infoWrap .richwood.on::after {
-  transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(0);
 }
 #footer .container .footerRight .infoWrap .info {
   color: #666666;
@@ -320,7 +329,7 @@ button .material-icons {
   font-weight: 400;
   height: 0;
   overflow: hidden;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 #footer .container .footerRight .infoWrap .info.on {
   overflow: none;
@@ -394,25 +403,43 @@ button .material-icons {
   #footer .container .footerRight .footerMenu ul li {
     font-size: clamp(20px, 1.8vw, 28px);
   }
-  #footer .container .footerRight .footerMenu ul li .infoWrap .richwood {
+  #footer .container .footerRight .infoWrap .richwood {
     font-size: clamp(20px, 1.8vw, 28px);
   }
-  #footer .container .footerRight .footerMenu ul li .infoWrap .richwood::after {
+  #footer .container .footerRight .infoWrap .richwood::after {
     font-size: clamp(20px, 1.8vw, 28px);
   }
-  #footer .container .footerRight .footerMenu ul li .infoWrap .info {
+  #footer .container .footerRight .infoWrap .info {
     font-size: clamp(11px, 0.9vw, 14px);
   }
-  #footer .container .footerRight .footerMenu ul li .law .privacy {
+  #footer .container .footerRight .law .privacy {
     font-size: clamp(12px, 1vw, 15px);
   }
-  #footer .container .footerRight .footerMenu ul li .law p {
+  #footer .container .footerRight .law p {
     font-size: clamp(6px, 0.8vw, 13px);
   }
 }
 @media all and (max-width: 1025px) {
+  .container {
+    width: 95%;
+  }
   #header {
     background-color: transparent;
+  }
+  #header.on {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  #header.on #logo a svg .symbol-green {
+    fill: #009d42;
+  }
+  #header.on #logo a svg .svg02 {
+    fill: inherit;
+  }
+  #header.on #gnbBtns ul li .material-icons {
+    color: #000;
+  }
+  #header.on #gnbBtns ul li.hamberger span {
+    background-color: #000;
   }
   #logo a svg .symbol-green {
     fill: transparent;
@@ -425,5 +452,20 @@ button .material-icons {
   }
   #gnbBtns {
     display: block;
+  }
+  #footer {
+    padding: 78px 0;
+  }
+  #footer .container .title {
+    display: none;
+  }
+  #footer .container .footerRight .footerMenu {
+    display: none;
+  }
+  #footer .container .footerRight .law {
+    margin-top: 0;
+  }
+  #footer .container .footerRight .law .privacy {
+    margin-bottom: 78px;
   }
 }

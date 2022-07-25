@@ -166,14 +166,21 @@ button {
   }
 }
 #subHeader {
-  // display: none;
+  display: none;
   color: #fff;
   background-image: url("../images/common/mobile-menu-bg.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
+  transition: all 0.25s ease;
+  &.open {
+    display: block;
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -232,7 +239,7 @@ button {
           font-size: 16px;
           font-weight: 400;
           color: #999;
-          padding: 10px 0;
+          margin: 10px 0;
           &.open {
             display: block;
           }
@@ -296,6 +303,7 @@ button {
           font-weight: 700;
           font-family: "Montserrat", sans-serif;
           position: relative;
+          padding: 0;
           &::after {
             content: "\e5ce";
             font-family: "Material Icons";
@@ -304,11 +312,11 @@ button {
             font-weight: 500;
             top: 50%;
             right: -25px;
-            transform: translateY(-50%) rotate(0);
+            transform: translateY(-50%) rotate(180deg);
             transition: transform 0.25s ease;
           }
           &.on::after {
-            transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(0);
           }
         }
         .info {
@@ -321,7 +329,7 @@ button {
           font-weight: 400;
           height: 0;
           overflow: hidden;
-          transition: all 0.25s ease-in-out;
+          transition: all 0.5s ease-in-out;
           &.on {
             overflow: none;
             height: 60px;
@@ -406,8 +414,10 @@ button {
     .title {
       font-size: clamp(40px, 3.2vw, 48px);
     }
-    .footerRight .footerMenu ul li {
-      font-size: clamp(20px, 1.8vw, 28px);
+    .footerRight {
+      .footerMenu ul li {
+        font-size: clamp(20px, 1.8vw, 28px);
+      }
       .infoWrap {
         .richwood {
           font-size: clamp(20px, 1.8vw, 28px);
@@ -431,8 +441,30 @@ button {
   }
 }
 @media all and(max-width:1025px) {
+  .container {
+    width: 95%;
+  }
   #header {
     background-color: transparent;
+    &.on {
+      background-color: rgba(255, 255, 255, 0.9);
+      #logo a svg {
+        .symbol-green {
+          fill: #009d42;
+        }
+        .svg02 {
+          fill: inherit;
+        }
+      }
+      #gnbBtns ul li {
+        .material-icons {
+          color: #000;
+        }
+        &.hamberger span {
+          background-color: #000;
+        }
+      }
+    }
   }
   #logo a svg {
     .symbol-green {
@@ -447,5 +479,24 @@ button {
   }
   #gnbBtns {
     display: block;
+  }
+  #footer {
+    padding: 78px 0;
+    .container {
+      .title {
+        display: none;
+      }
+      .footerRight {
+        .footerMenu {
+          display: none;
+        }
+        .law {
+          margin-top: 0;
+          .privacy {
+            margin-bottom: 78px;
+          }
+        }
+      }
+    }
   }
 }

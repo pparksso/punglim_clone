@@ -636,7 +636,7 @@ p {
         .search {
           flex-basis: 13%;
           height: 100%;
-          button {
+          .searchBtn {
             width: 100%;
             height: 100%;
             background-color: #000;
@@ -644,6 +644,9 @@ p {
             font-size: 20px;
             font-weight: 700;
             color: #fff;
+          }
+          &.mobileSearchBtn {
+            display: none;
           }
         }
       }
@@ -852,8 +855,8 @@ p {
 
 @media all and(max-width:1690px) {
   .subtitle {
-    font-size: clamp(32px, 2.9vw, 48px);
-    line-height: clamp(30px, 3.5vw, 60px);
+    font-size: clamp(40px, 2.9vw, 48px);
+    line-height: clamp(50px, 3.5vw, 60px);
   }
   #update .container #new .search {
     ul li {
@@ -954,10 +957,226 @@ p {
   #mainVisual {
     padding-top: 0;
     .swiper ul li {
-      height: 93vh;
+      height: 100vh;
+      .textBox {
+        h2 {
+          font-size: 60px;
+        }
+        p {
+          font-size: 21px;
+        }
+        a span {
+          font-size: 16px;
+        }
+      }
     }
     .btns {
       display: none;
+    }
+  }
+}
+@media all and(max-width:910px) {
+  #recommend .container .inner {
+    .bar {
+      position: relative;
+      .list {
+        flex-basis: 25%;
+      }
+      .textBox {
+        flex-grow: 1;
+        border-radius: 100px;
+      }
+      .search {
+        flex-basis: 0;
+        .searchBtn {
+          display: none;
+        }
+        .mobileSearchBtn {
+          display: block;
+          position: absolute;
+          right: 40px;
+          top: 50%;
+          transform: translateY(-50%);
+          .material-icons {
+            color: #000;
+            font-weight: 700;
+            font-size: 30px;
+          }
+        }
+      }
+    }
+    .tagList {
+      display: none;
+    }
+  }
+}
+@media all and(max-width:860px) {
+  .subtitle {
+    font-size: clamp(28px, 4.6vw, 40px);
+    line-height: clamp(35px, 5.8vw, 50px);
+  }
+  #mainVisual .swiper ul li .textBox {
+    h2 {
+      font-size: clamp(40px, 7vw, 61px);
+    }
+    p {
+      font-size: clamp(13px, 2.3vw, 20px);
+    }
+    a span {
+      font-size: clamp(12px, 2vw, 18px);
+    }
+  }
+  #update .container {
+    #new .search {
+      border: none;
+      border-radius: 0;
+      &:hover {
+        background-color: none;
+      }
+      ul li {
+        a {
+          padding: clamp(40px, 6.9vw, 60px) clamp(20px, 4.6vw, 40px);
+          width: 100vw;
+          height: auto;
+          line-height: 2;
+          background-color: #000;
+          .textBox {
+            flex-direction: column;
+            .title {
+              width: 100%;
+              padding-right: 0;
+              font-size: clamp(14px, 2.5vw, 22px);
+              color: #fff;
+              font-weight: 700;
+              margin-left: 0;
+              &:after {
+                display: none;
+              }
+            }
+            .desc {
+              color: #fff;
+              font-weight: 400;
+              font-size: clamp(14px, 2.5vw, 22px);
+              margin-left: 0;
+            }
+          }
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+    .nav {
+      top: 20%;
+      button .material-icons {
+        font-size: clamp(28px, 4.6vw, 40px);
+      }
+      .pagination span {
+        font-size: clamp(18px, 1.4vw, 22px);
+      }
+    }
+  }
+  #business .container {
+    .titleBox .title {
+      h2 {
+        font-size: clamp(30px, 5.3vw, 46px);
+      }
+      &:before {
+        width: clamp(6px, 0.6vw, 9px);
+        height: clamp(6px, 0.6vh, 9px);
+      }
+    }
+    .pannel .contentsWrap {
+      .textBox {
+        p {
+          font-size: clamp(12px, 1.9vw, 17px);
+          line-height: 2;
+        }
+      }
+      .contents .list {
+        justify-content: space-between;
+        li {
+          width: calc(50% - 34px);
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  #recommend .container .inner .bar .list li .selectBtn {
+    padding: 0 clamp(20px, 4.6vw, 40px);
+  }
+  #newsSns .container {
+    .title {
+      h2 {
+        font-size: clamp(26px, 4.5vw, 39px);
+      }
+      a {
+        font-size: clamp(12px, 2vw, 18px);
+      }
+    }
+    flex-direction: column;
+    #news .mainNews .newsList {
+      justify-content: space-between;
+      li a {
+        width: clamp(240px, 44vw, 380px);
+        &:hover img {
+          transform: scale(0);
+        }
+        .desc {
+          .title {
+            font-size: clamp(16px, 2.7vw, 24px);
+          }
+          p {
+            font-size: clamp(13px, 2.3vw, 20px);
+          }
+          .date {
+            font-size: clamp(11px, 1.9vw, 17px);
+          }
+        }
+      }
+    }
+    #sns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 130px;
+      .title {
+        position: relative;
+        h2:after {
+          content: " CHANNEL";
+        }
+      }
+      .snsMain a .desc {
+        font-size: clamp(16px, 2.7vw, 24px);
+      }
+      .snsList li {
+        position: relative;
+        &::after {
+          content: "";
+          width: 1px;
+          height: 10px;
+          background-color: #ddd;
+          position: absolute;
+          right: -15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &:nth-child(3):after {
+          display: none;
+        }
+        a {
+          border: none;
+          width: clamp(37px, 3.3vw, 60px);
+          height: clamp(37px, 3.3vw, 60px);
+          &:hover {
+            background-color: none;
+            border-color: none;
+            i {
+              color: #aaa;
+            }
+          }
+        }
+      }
     }
   }
 }
