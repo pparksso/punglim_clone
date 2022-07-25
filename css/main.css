@@ -11,8 +11,12 @@ h2 {
   line-height: 1.2;
 }
 
+p {
+  word-break: keep-all;
+}
+
 #mainVisual {
-  width: 100%;
+  width: 100vw;
   position: relative;
   padding-top: 130px;
 }
@@ -21,6 +25,7 @@ h2 {
   height: 71.5vh;
   background-position: 50% 50%;
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
 }
 #mainVisual ul li.visual01 video {
@@ -213,12 +218,9 @@ h2 {
   border: 3px solid #000;
   display: block;
   width: 100%;
-  height: 110px;
-  top: 0;
-  left: 0;
+  height: 100%;
   box-sizing: border-box;
   border-radius: 120px;
-  z-index: 0;
   pointer-events: none;
 }
 #update .container #new .search:hover {
@@ -227,6 +229,8 @@ h2 {
 }
 #update .container #new .search ul li {
   width: 100%;
+  box-sizing: border-box;
+  padding-right: 100px;
 }
 #update .container #new .search ul li a {
   width: 100%;
@@ -236,16 +240,34 @@ h2 {
 }
 #update .container #new .search ul li a .textBox {
   display: flex;
+  font-size: 22px;
 }
 #update .container #new .search ul li a .textBox .title {
-  font-size: 22px;
   font-weight: 700;
   margin-left: 70px;
+  position: relative;
+  width: 200px;
+  padding-right: 50px;
+}
+#update .container #new .search ul li a .textBox .title:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 18px;
+  background-color: #ddd;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
 }
 #update .container #new .search ul li a .textBox .desc {
-  font-size: 22px;
-  margin-left: 130px;
+  margin-left: 30px;
   position: relative;
+  letter-spacing: -2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
 }
 #update .container #new .search ul li a .textBox .desc::before {
   content: "";
@@ -345,6 +367,7 @@ h2 {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 30px;
+  word-break: keep-all;
 }
 #business .container .pannel .contentsWrap .textBox a {
   font-size: 15px;
@@ -368,17 +391,21 @@ h2 {
 #business .container .pannel .contentsWrap .contents .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 #business .container .pannel .contentsWrap .contents .list li {
+  width: calc(25% - 34px);
+  margin-right: 45px;
   position: relative;
+}
+#business .container .pannel .contentsWrap .contents .list li:nth-child(4) {
+  margin-right: 0;
+}
+#business .container .pannel .contentsWrap .contents .list li:nth-child(8) {
+  margin-right: 0;
 }
 #business .container .pannel .contentsWrap .contents .list li a:hover.zoom img {
   transition: all 0.7s ease-in-out;
   transform: scale(1.05);
-}
-#business .container .pannel .contentsWrap .contents .list li a .imgBox {
-  overflow: hidden;
 }
 #business .container .pannel .contentsWrap .contents .list li a p {
   font-size: 20px;
@@ -391,20 +418,46 @@ h2 {
   color: #fff;
   font-weight: 700;
   line-height: 1.5;
-  font-size: 22px;
+  font-size: clamp(16px, 1.1vw, 22px);
+}
+#business .container .pannel .contentsWrap .contents .list li .imgBox {
+  position: relative;
+}
+#business .container .pannel .contentsWrap .contents .list li .imgBox:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+#business .container .pannel .contentsWrap .contents .list li .imgBox img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 #business .container .pannel .contentsWrap .contents .list li .box {
-  display: block;
-  width: 361px;
-  height: 361px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
-#business .container .pannel .contentsWrap .contents .list li .box span {
+#business .container .pannel .contentsWrap .contents .list li .box::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+#business .container .pannel .contentsWrap .contents .list li .box .boxInner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#business .container .pannel .contentsWrap .contents .list li .box .boxInner span {
   font-weight: 700;
-  font-size: 40px;
-  display: inline-block;
+  font-size: clamp(30px, 2vw, 40px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #business .container .pannel .contentsWrap#trading .box span {
   color: #d6000e;
@@ -419,8 +472,6 @@ h2 {
 }
 #business .container .pannel .contentsWrap#medicine a .imgBox img {
   border-radius: 100%;
-  width: 360px;
-  height: 360px;
 }
 #business .container .pannel .contentsWrap#medicine .box span {
   color: #2d5ffd;
@@ -444,75 +495,82 @@ h2 {
 }
 #recommend .container .inner .bar {
   display: flex;
+  height: 90px;
 }
-#recommend .container .inner .bar .list .selectBar {
+#recommend .container .inner .bar .list {
+  flex-basis: 17%;
+}
+#recommend .container .inner .bar .list li {
+  width: 100%;
+}
+#recommend .container .inner .bar .list li .selectBtn {
+  display: block;
+  width: 90%;
   border: 3px solid #dedede;
-  display: flex;
   border-radius: 45px;
-  margin-right: 20px;
-  width: 240px;
   height: 90px;
   padding: 0 40px;
   transition: border-color 0.25s ease-in-out;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
 }
-#recommend .container .inner .bar .list .selectBar:hover {
+#recommend .container .inner .bar .list li .selectBtn:hover {
   border-color: #000;
 }
-#recommend .container .inner .bar .list .selectBar::after {
+#recommend .container .inner .bar .list li .selectBtn::after {
   content: "\e5cf";
   font-family: "Material Icons";
   font-weight: 500;
   font-size: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(0);
+  right: 10%;
 }
-#recommend .container .inner .bar .list .selectBar:active:after {
-  transform: rotate(-180deg);
-}
-#recommend .container .inner .bar .list .selectBar span {
+#recommend .container .inner .bar .list li .selectBtn span {
   display: flex;
   font-size: 20px;
   font-weight: 700;
 }
-#recommend .container .inner .bar .list .selectBar.open {
+#recommend .container .inner .bar .list li .selectBtn.open {
   border-color: #000;
   border-bottom: none;
   border-radius: 45px 45px 0 0;
 }
-#recommend .container .inner .bar .list .selectList {
+#recommend .container .inner .bar .list li .selectBtn.open::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+#recommend .container .inner .bar .list li .selectList {
   display: none;
-  position: absolute;
-  z-index: 99;
   border: 3px solid #000;
-  width: 240px;
   height: 210px;
   border-radius: 0 0 50px 50px;
   border-top: none;
+  background-color: #fff;
+  width: 90%;
 }
-#recommend .container .inner .bar .list .selectList.open {
+#recommend .container .inner .bar .list li .selectList.open {
   display: block;
 }
-#recommend .container .inner .bar .list .selectList ul li {
+#recommend .container .inner .bar .list li .selectList li {
   font-weight: 500;
   font-size: 20px;
   padding: 25px 40px 0 40px;
 }
-#recommend .container .inner .bar .list .selectList ul li .etc {
+#recommend .container .inner .bar .list li .selectList li .etc {
   display: block;
   color: #9a9a9d;
   transition: all 0.25s ease-in-out;
 }
-#recommend .container .inner .bar .list .selectList ul li .etc:hover {
+#recommend .container .inner .bar .list li .selectList li .etc:hover {
   color: #000;
 }
-#recommend .container .inner .bar .list .selectList ul li .all {
+#recommend .container .inner .bar .list li .selectList li .all {
   color: #000;
   display: block;
 }
 #recommend .container .inner .bar .textBox {
   background-color: #f4f4f4;
-  height: 90px;
-  flex-grow: 1;
+  flex-basis: 70%;
   margin-right: 10px;
   box-sizing: border-box;
   border-radius: 100px 0 0 100px;
@@ -532,9 +590,13 @@ h2 {
 #recommend .container .inner .bar .textBox input:focus::placeholder {
   color: transparent;
 }
+#recommend .container .inner .bar .search {
+  flex-basis: 13%;
+  height: 100%;
+}
 #recommend .container .inner .bar .search button {
-  height: 90px;
-  width: 200px;
+  width: 100%;
+  height: 100%;
   background-color: #000;
   border-radius: 0 100px 100px 0;
   font-size: 20px;
@@ -542,14 +604,14 @@ h2 {
   color: #fff;
 }
 #recommend .container .inner .tagList {
-  margin: 30px 50px 0 0;
-  justify-content: flex-end;
+  margin: 30px 0 0 120px;
+  justify-content: center;
   display: flex;
   font-weight: 500;
   font-family: "Noto Sans KR", sans-serif;
 }
 #recommend .container .inner .tagList span {
-  font-size: 18px;
+  word-break: keep-all;
   margin-right: 30px;
   font-weight: 600;
 }
@@ -559,6 +621,7 @@ h2 {
 #recommend .container .inner .tagList ul li {
   margin-right: 20px;
   color: #9a9a9d;
+  word-break: keep-all;
 }
 #recommend .container .inner .tagList ul li:hover {
   color: #000;
@@ -581,7 +644,7 @@ h2 {
 #newsSns .container #news .title a {
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: clamp(14px, 0.8vw, 16px);
   font-weight: 700;
   color: #bbb;
   transition: all 0.25s ease;
@@ -596,26 +659,35 @@ h2 {
   margin-right: 30px;
 }
 #newsSns .container #news .mainNews .newsList li a {
-  width: 361px;
+  width: clamp(250px, 20vw, 361px);
   display: block;
 }
 #newsSns .container #news .mainNews .newsList li a:hover img {
   transform: scale(1.1);
 }
 #newsSns .container #news .mainNews .newsList li a .imgBox {
-  width: 361px;
-  height: 361px;
-  overflow: hidden;
+  position: relative;
+}
+#newsSns .container #news .mainNews .newsList li a .imgBox:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
 }
 #newsSns .container #news .mainNews .newsList li a .imgBox img {
   transition: all 0.7s ease;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 #newsSns .container #news .mainNews .newsList li a .desc {
   margin-top: 30px;
 }
 #newsSns .container #news .mainNews .newsList li a .desc .title {
   display: block;
-  font-size: 22px;
+  font-size: clamp(18px, 1.2vw, 22px);
   font-weight: 700;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -625,7 +697,7 @@ h2 {
 }
 #newsSns .container #news .mainNews .newsList li a .desc p {
   font-weight: 400;
-  font-size: 18px;
+  font-size: clamp(15px, 1vw, 18px);
   color: #666;
   line-height: 1.5;
   height: 3em;
@@ -636,7 +708,7 @@ h2 {
   margin-bottom: 40px;
 }
 #newsSns .container #news .mainNews .newsList li a .desc .date {
-  font-size: 15px;
+  font-size: clamp(12px, 0.8vw, 15px);
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   color: #bbb;
@@ -644,12 +716,26 @@ h2 {
 #newsSns .container #sns .title {
   margin-bottom: 40px;
 }
+#newsSns .container #sns .snsMain a .imgBox {
+  position: relative;
+}
+#newsSns .container #sns .snsMain a .imgBox:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
 #newsSns .container #sns .snsMain a .imgBox img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 100%;
 }
 #newsSns .container #sns .snsMain a .desc {
   font-weight: 700;
-  font-size: 22px;
+  font-size: clamp(18px, 1.2vw, 22px);
   text-align: center;
   line-height: 1.5;
   margin-top: 30px;
@@ -668,8 +754,8 @@ h2 {
   justify-content: center;
   border: 1px solid #ddd;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: clamp(40px, 3.3vw, 60px);
+  height: clamp(40px, 3.3vw, 60px);
   transition: all 0.25s ease-in-out;
 }
 #newsSns .container #sns .snsList a:hover {
@@ -681,7 +767,7 @@ h2 {
 }
 #newsSns .container #sns .snsList a i {
   transition: all 0.25s ease-in-out;
-  font-size: 23px;
+  font-size: clamp(18px, 1.2vw, 23px);
   font-weight: 900;
   color: #aaa;
 }
@@ -698,5 +784,102 @@ h2 {
   100% {
     opacity: 1;
     right: 50px;
+  }
+}
+@media all and (max-width: 1870px) {
+  #recommend .container .inner .tagList {
+    justify-content: flex-end;
+    padding-left: 80px;
+  }
+}
+@media all and (max-width: 1690px) {
+  .subtitle {
+    font-size: clamp(32px, 2.9vw, 48px);
+    line-height: clamp(30px, 3.5vw, 60px);
+  }
+  #update .container #new .search ul li a {
+    height: clamp(90px, 6.5vh, 110px);
+    line-height: clamp(90px, 6.5vh, 110px);
+  }
+  #update .container #new .search ul li a .textBox {
+    font-size: clamp(20px, 1.3vw, 22px);
+  }
+  #recommend .container .inner .tagList {
+    flex-direction: column;
+    font-size: clamp(10px, 1.1vw, 18px);
+  }
+}
+@media all and (max-width: 1500px) {
+  #mainVisual {
+    padding-top: 100px;
+  }
+  #mainVisual .swiper ul li {
+    height: 60vh;
+  }
+  #mainVisual .swiper ul li .textBox h2 {
+    font-size: clamp(50px, 4.6vw, 70px);
+  }
+  #mainVisual .swiper ul li .textBox p {
+    font-size: clamp(14px, 1.1vw, 17px);
+  }
+  #mainVisual .swiper ul li .textBox a span {
+    font-size: clamp(15px, 1.2vw, 18px);
+  }
+  #update .nav button .material-icons {
+    font-size: clamp(30px, 2.6vw, 40px);
+  }
+  #update .nav .pagination span {
+    font-size: clamp(18px, 1.4vw, 22px);
+  }
+  #business .container .titleBox .title h2 {
+    font-size: clamp(45px, 3.6vw, 55px);
+  }
+  #business .container .titleBox .title:before {
+    width: clamp(6px, 0.6vw, 9px);
+    height: clamp(6px, 0.6vh, 9px);
+  }
+  #business .container .pannel .contentsWrap .textBox p {
+    font-size: clamp(14px, 1.2vw, 18px);
+  }
+  #business .container .pannel .contentsWrap .textBox a {
+    font-size: clamp(11px, 1vw, 15px);
+    padding: clamp(15px, 1.3vw, 20px) clamp(20px, 1.6vw, 25px);
+  }
+  #recommend .container .inner .bar {
+    height: clamp(80px, 6vh, 90px);
+  }
+  #recommend .container .inner .bar .list li .selectBtn {
+    height: clamp(80px, 6vh, 90px);
+  }
+  #recommend .container .inner .bar .list li .selectBtn:after {
+    font-size: clamp(24px, 2vw, 30px);
+  }
+  #recommend .container .inner .bar .list li .selectBtn span {
+    font-size: clamp(16px, 1.3vw, 20px);
+  }
+  #recommend .container .inner .bar .list li .selectList li {
+    font-size: clamp(16px, 1.3vw, 20px);
+  }
+  #recommend .container .inner .bar .textBox input {
+    font-size: clamp(16px, 1.3vw, 20px);
+  }
+  #recommend .container .inner .bar .search button {
+    font-size: clamp(16px, 1.3vw, 20px);
+  }
+}
+@media all and (max-width: 1200px) {
+  #mainVisual .swiper ul li {
+    height: 50vh;
+  }
+}
+@media all and (max-width: 1025px) {
+  #mainVisual {
+    padding-top: 0;
+  }
+  #mainVisual .swiper ul li {
+    height: 93vh;
+  }
+  #mainVisual .btns {
+    display: none;
   }
 }

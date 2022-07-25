@@ -4,14 +4,16 @@
   font-weight: 700;
   line-height: 60px;
 }
-
 h2 {
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
 }
+p {
+  word-break: keep-all;
+}
 #mainVisual {
-  width: 100%;
+  width: 100vw;
   position: relative;
   padding-top: 130px;
   ul {
@@ -20,6 +22,7 @@ h2 {
       height: 71.5vh;
       background-position: 50% 50%;
       background-size: cover;
+      background-repeat: no-repeat;
       display: flex;
       &.visual01 video {
         width: 100%;
@@ -101,6 +104,20 @@ h2 {
           }
         }
       }
+      // &.swiper-slide-active {
+      //   h2 {
+      //     opacity: 1;
+      //     transform: translateY(0);
+      //   }
+      //   p {
+      //     opacity: 1;
+      //     transform: translateY(0);
+      //   }
+      //   a {
+      //     opacity: 1;
+      //     transform: translateY(0);
+      //   }
+      // }
     }
   }
   .btns {
@@ -217,12 +234,9 @@ h2 {
         border: 3px solid #000;
         display: block;
         width: 100%;
-        height: 110px;
-        top: 0;
-        left: 0;
+        height: 100%;
         box-sizing: border-box;
         border-radius: 120px;
-        z-index: 0;
         pointer-events: none;
         &:hover {
           background-color: #000;
@@ -231,6 +245,8 @@ h2 {
         ul {
           li {
             width: 100%;
+            box-sizing: border-box;
+            padding-right: 100px;
             a {
               width: 100%;
               display: block;
@@ -238,15 +254,33 @@ h2 {
               line-height: 110px;
               .textBox {
                 display: flex;
+                font-size: 22px;
                 .title {
-                  font-size: 22px;
                   font-weight: 700;
                   margin-left: 70px;
+                  position: relative;
+                  width: 200px;
+                  padding-right: 50px;
+                  &:after {
+                    content: "";
+                    display: block;
+                    width: 1px;
+                    height: 18px;
+                    background-color: #ddd;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                  }
                 }
                 .desc {
-                  font-size: 22px;
-                  margin-left: 130px;
+                  margin-left: 30px;
                   position: relative;
+                  letter-spacing: -2px;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  word-break: break-all;
                   &::before {
                     content: "";
                     display: block;
@@ -359,6 +393,7 @@ h2 {
             font-size: 18px;
             line-height: 1.5;
             margin-bottom: 30px;
+            word-break: keep-all;
           }
           a {
             font-size: 15px;
@@ -384,18 +419,22 @@ h2 {
           .list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             li {
+              width: calc(25% - 34px);
+              margin-right: 45px;
               position: relative;
+              &:nth-child(4) {
+                margin-right: 0;
+              }
+              &:nth-child(8) {
+                margin-right: 0;
+              }
               a {
                 &:hover {
                   &.zoom img {
                     transition: all 0.7s ease-in-out;
                     transform: scale(1.05);
                   }
-                }
-                .imgBox {
-                  overflow: hidden;
                 }
                 p {
                   font-size: 20px;
@@ -407,21 +446,47 @@ h2 {
                     color: #fff;
                     font-weight: 700;
                     line-height: 1.5;
-                    font-size: 22px;
+                    font-size: clamp(16px, 1.1vw, 22px);
                   }
                 }
               }
+              .imgBox {
+                position: relative;
+                &:before {
+                  content: "";
+                  display: block;
+                  padding-top: 100%;
+                }
+                img {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  object-fit: cover;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
               .box {
-                display: block;
-                width: 361px;
-                height: 361px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                span {
-                  font-weight: 700;
-                  font-size: 40px;
-                  display: inline-block;
+                position: relative;
+                &::before {
+                  content: "";
+                  display: block;
+                  padding-top: 100%;
+                }
+                .boxInner {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  span {
+                    font-weight: 700;
+                    font-size: clamp(30px, 2vw, 40px);
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                  }
                 }
               }
             }
@@ -443,8 +508,6 @@ h2 {
               border-radius: 100%;
               img {
                 border-radius: 100%;
-                width: 360px;
-                height: 360px;
               }
             }
           }
@@ -474,54 +537,58 @@ h2 {
       position: relative;
       .bar {
         display: flex;
+        height: 90px;
         .list {
-          .selectBar {
-            border: 3px solid #dedede;
-            display: flex;
-            border-radius: 45px;
-            margin-right: 20px;
-            width: 240px;
-            height: 90px;
-            padding: 0 40px;
-            transition: border-color 0.25s ease-in-out;
-            align-items: center;
-            justify-content: space-between;
-            &:hover {
-              border-color: #000;
-            }
-            &::after {
-              content: "\e5cf";
-              font-family: "Material Icons";
-              font-weight: 500;
-              font-size: 30px;
-            }
-            &:active:after {
-              transform: rotate(-180deg);
-            }
-            span {
-              display: flex;
-              font-size: 20px;
-              font-weight: 700;
-            }
-            &.open {
-              border-color: #000;
-              border-bottom: none;
-              border-radius: 45px 45px 0 0;
-            }
-          }
-          .selectList {
-            display: none;
-            position: absolute;
-            z-index: 99;
-            border: 3px solid #000;
-            width: 240px;
-            height: 210px;
-            border-radius: 0 0 50px 50px;
-            border-top: none;
-            &.open {
+          flex-basis: 17%;
+          li {
+            width: 100%;
+            .selectBtn {
               display: block;
+              width: 90%;
+              border: 3px solid #dedede;
+              border-radius: 45px;
+              height: 90px;
+              padding: 0 40px;
+              transition: border-color 0.25s ease-in-out;
+              position: relative;
+              &:hover {
+                border-color: #000;
+              }
+              &::after {
+                content: "\e5cf";
+                font-family: "Material Icons";
+                font-weight: 500;
+                font-size: 30px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%) rotate(0);
+                right: 10%;
+              }
+              span {
+                display: flex;
+                font-size: 20px;
+                font-weight: 700;
+              }
+              &.open {
+                border-color: #000;
+                border-bottom: none;
+                border-radius: 45px 45px 0 0;
+                &::after {
+                  transform: translateY(-50%) rotate(-180deg);
+                }
+              }
             }
-            ul {
+            .selectList {
+              display: none;
+              border: 3px solid #000;
+              height: 210px;
+              border-radius: 0 0 50px 50px;
+              border-top: none;
+              background-color: #fff;
+              width: 90%;
+              &.open {
+                display: block;
+              }
               li {
                 font-weight: 500;
                 font-size: 20px;
@@ -544,8 +611,7 @@ h2 {
         }
         .textBox {
           background-color: #f4f4f4;
-          height: 90px;
-          flex-grow: 1;
+          flex-basis: 70%;
           margin-right: 10px;
           box-sizing: border-box;
           border-radius: 100px 0 0 100px;
@@ -568,9 +634,11 @@ h2 {
           }
         }
         .search {
+          flex-basis: 13%;
+          height: 100%;
           button {
-            height: 90px;
-            width: 200px;
+            width: 100%;
+            height: 100%;
             background-color: #000;
             border-radius: 0 100px 100px 0;
             font-size: 20px;
@@ -580,13 +648,13 @@ h2 {
         }
       }
       .tagList {
-        margin: 30px 50px 0 0;
-        justify-content: flex-end;
+        margin: 30px 0 0 120px;
+        justify-content: center;
         display: flex;
         font-weight: 500;
         font-family: "Noto Sans KR", sans-serif;
         span {
-          font-size: 18px;
+          word-break: keep-all;
           margin-right: 30px;
           font-weight: 600;
         }
@@ -595,6 +663,7 @@ h2 {
           li {
             margin-right: 20px;
             color: #9a9a9d;
+            word-break: keep-all;
             &:hover {
               color: #000;
             }
@@ -620,7 +689,7 @@ h2 {
         a {
           display: flex;
           align-items: center;
-          font-size: 16px;
+          font-size: clamp(14px, 0.8vw, 16px);
           font-weight: 700;
           color: #bbb;
           transition: all 0.25s ease;
@@ -637,24 +706,33 @@ h2 {
               margin-right: 30px;
             }
             a {
-              width: 361px;
+              width: clamp(250px, 20vw, 361px);
               display: block;
               &:hover img {
                 transform: scale(1.1);
               }
               .imgBox {
-                width: 361px;
-                height: 361px;
-                overflow: hidden;
+                position: relative;
+                &:before {
+                  content: "";
+                  display: block;
+                  padding-top: 100%;
+                }
                 img {
                   transition: all 0.7s ease;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  object-fit: cover;
+                  width: 100%;
+                  height: 100%;
                 }
               }
               .desc {
                 margin-top: 30px;
                 .title {
                   display: block;
-                  font-size: 22px;
+                  font-size: clamp(18px, 1.2vw, 22px);
                   font-weight: 700;
                   text-overflow: ellipsis;
                   overflow: hidden;
@@ -664,7 +742,7 @@ h2 {
                 }
                 p {
                   font-weight: 400;
-                  font-size: 18px;
+                  font-size: clamp(15px, 1vw, 18px);
                   color: #666;
                   line-height: 1.5;
                   height: 3em;
@@ -675,7 +753,7 @@ h2 {
                   margin-bottom: 40px;
                 }
                 .date {
-                  font-size: 15px;
+                  font-size: clamp(12px, 0.8vw, 15px);
                   font-weight: 600;
                   font-family: "Montserrat", sans-serif;
                   color: #bbb;
@@ -691,12 +769,26 @@ h2 {
         margin-bottom: 40px;
       }
       .snsMain a {
-        .imgBox img {
-          border-radius: 100%;
+        .imgBox {
+          position: relative;
+          &:before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+          }
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 100%;
+          }
         }
         .desc {
           font-weight: 700;
-          font-size: 22px;
+          font-size: clamp(18px, 1.2vw, 22px);
           text-align: center;
           line-height: 1.5;
           margin-top: 30px;
@@ -715,8 +807,8 @@ h2 {
           justify-content: center;
           border: 1px solid #ddd;
           border-radius: 50%;
-          width: 60px;
-          height: 60px;
+          width: clamp(40px, 3.3vw, 60px);
+          height: clamp(40px, 3.3vw, 60px);
           transition: all 0.25s ease-in-out;
           &:hover {
             background-color: #000;
@@ -727,7 +819,7 @@ h2 {
           }
           i {
             transition: all 0.25s ease-in-out;
-            font-size: 23px;
+            font-size: clamp(18px, 1.2vw, 23px);
             font-weight: 900;
             color: #aaa;
           }
@@ -749,5 +841,123 @@ h2 {
   100% {
     opacity: 1;
     right: 50px;
+  }
+}
+@media all and(max-width:1870px) {
+  #recommend .container .inner .tagList {
+    justify-content: flex-end;
+    padding-left: 80px;
+  }
+}
+
+@media all and(max-width:1690px) {
+  .subtitle {
+    font-size: clamp(32px, 2.9vw, 48px);
+    line-height: clamp(30px, 3.5vw, 60px);
+  }
+  #update .container #new .search {
+    ul li {
+      a {
+        height: clamp(90px, 6.5vh, 110px);
+        line-height: clamp(90px, 6.5vh, 110px);
+        .textBox {
+          font-size: clamp(20px, 1.3vw, 22px);
+        }
+      }
+    }
+  }
+  #recommend .container .inner {
+    .tagList {
+      flex-direction: column;
+      font-size: clamp(10px, 1.1vw, 18px);
+    }
+  }
+}
+@media all and(max-width:1500px) {
+  #mainVisual {
+    padding-top: 100px;
+    .swiper ul li {
+      height: 60vh;
+      .textBox {
+        h2 {
+          font-size: clamp(50px, 4.6vw, 70px);
+        }
+        p {
+          font-size: clamp(14px, 1.1vw, 17px);
+        }
+        a span {
+          font-size: clamp(15px, 1.2vw, 18px);
+        }
+      }
+    }
+  }
+  #update .nav {
+    button .material-icons {
+      font-size: clamp(30px, 2.6vw, 40px);
+    }
+    .pagination span {
+      font-size: clamp(18px, 1.4vw, 22px);
+    }
+  }
+  #business .container {
+    .titleBox .title {
+      h2 {
+        font-size: clamp(45px, 3.6vw, 55px);
+      }
+      &:before {
+        width: clamp(6px, 0.6vw, 9px);
+        height: clamp(6px, 0.6vh, 9px);
+      }
+    }
+    .pannel .contentsWrap {
+      .textBox {
+        p {
+          font-size: clamp(14px, 1.2vw, 18px);
+        }
+        a {
+          font-size: clamp(11px, 1vw, 15px);
+          padding: clamp(15px, 1.3vw, 20px) clamp(20px, 1.6vw, 25px);
+        }
+      }
+    }
+  }
+  #recommend .container .inner .bar {
+    height: clamp(80px, 6vh, 90px);
+    .list li {
+      .selectBtn {
+        height: clamp(80px, 6vh, 90px);
+        &:after {
+          font-size: clamp(24px, 2vw, 30px);
+        }
+        span {
+          font-size: clamp(16px, 1.3vw, 20px);
+        }
+      }
+      .selectList li {
+        font-size: clamp(16px, 1.3vw, 20px);
+      }
+    }
+    .textBox input {
+      font-size: clamp(16px, 1.3vw, 20px);
+    }
+    .search button {
+      font-size: clamp(16px, 1.3vw, 20px);
+    }
+  }
+}
+@media all and(max-width:1200px) {
+  #mainVisual .swiper ul li {
+    height: 50vh;
+  }
+}
+@media all and(max-width:1025px) {
+  #mainVisual {
+    padding-top: 0;
+    .swiper ul li {
+      height: 93vh;
+    }
+    .btns {
+      display: none;
+    }
   }
 }

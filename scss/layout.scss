@@ -49,6 +49,10 @@ button {
     justify-content: space-between;
   }
 }
+#logo a svg {
+  width: 224px;
+  height: 34px;
+}
 #gnb {
   nav {
     display: flex;
@@ -116,6 +120,130 @@ button {
     }
   }
 }
+#gnbBtns {
+  margin-right: 30px;
+  display: none;
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      a .material-icons {
+        color: #fff;
+        font-weight: 700;
+        font-size: 26px;
+        margin-right: 20px;
+      }
+      &.hamberger {
+        position: relative;
+        height: 100px;
+        &.open span {
+          transition: all 0.25s ease-in-out;
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(-45deg);
+          }
+          &:nth-child(2) {
+            top: 50%;
+            transform: rotate(45deg);
+          }
+        }
+        span {
+          width: 25px;
+          height: 3px;
+          background-color: #fff;
+          display: block;
+          position: absolute;
+          left: 0;
+          &:nth-child(1) {
+            top: 43px;
+          }
+          &:nth-child(2) {
+            top: 52px;
+          }
+        }
+      }
+    }
+  }
+}
+#subHeader {
+  // display: none;
+  color: #fff;
+  background-image: url("../images/common/mobile-menu-bg.jpg");
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .headerTop {
+      height: 100px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      .langList {
+        display: flex;
+        li {
+          margin-right: 20px;
+          font-size: 14px;
+          font-weight: 500;
+          .en {
+            color: #999;
+          }
+        }
+      }
+      .hamberger {
+        margin-right: 30px;
+        position: relative;
+        height: 100px;
+        span {
+          width: 25px;
+          height: 3px;
+          background-color: #fff;
+          display: block;
+          position: absolute;
+          left: 0;
+          transition: all 0.25s ease-in-out;
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(-45deg);
+          }
+          &:nth-child(2) {
+            top: 50%;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .list {
+      padding-top: 50px;
+      li {
+        padding-bottom: 30px;
+        .depth01 {
+          font-size: 33px;
+          font-weight: 500;
+        }
+        .depth02 {
+          display: none;
+          font-size: 16px;
+          font-weight: 400;
+          color: #999;
+          padding: 10px 0;
+          &.open {
+            display: block;
+          }
+          li {
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+}
 
 #footer {
   background-color: #000;
@@ -123,14 +251,15 @@ button {
   padding: 140px 0 126px 0;
   .container {
     display: flex;
-    justify-content: space-between;
     .title {
+      word-break: keep-all;
+      width: 50%;
       font-size: 48px;
       font-weight: 700;
       line-height: 1.5;
     }
     .footerRight {
-      padding: 15px 150px 0 0;
+      padding-top: 15px;
       .footerMenu {
         ul {
           margin-bottom: 60px;
@@ -242,5 +371,81 @@ button {
         }
       }
     }
+  }
+}
+
+@media all and(max-width:1800px) {
+  #header {
+    .container {
+      width: 93%;
+    }
+  }
+}
+
+@media all and(max-width:1500px) {
+  .container {
+    width: 90%;
+  }
+  #header {
+    height: 100px;
+  }
+  #logo a svg {
+    width: clamp(215px, 14.9vw, 224px);
+    height: clamp(25px, 2.2vw, 34px);
+  }
+  #gnb nav .list li {
+    .depth01 {
+      font-size: clamp(15px, 1.2vw, 18px);
+    }
+    .depth02 {
+      font-size: clamp(13px, 1vw, 16px);
+      top: 115px;
+    }
+  }
+  #footer .container {
+    .title {
+      font-size: clamp(40px, 3.2vw, 48px);
+    }
+    .footerRight .footerMenu ul li {
+      font-size: clamp(20px, 1.8vw, 28px);
+      .infoWrap {
+        .richwood {
+          font-size: clamp(20px, 1.8vw, 28px);
+          &::after {
+            font-size: clamp(20px, 1.8vw, 28px);
+          }
+        }
+        .info {
+          font-size: clamp(11px, 0.9vw, 14px);
+        }
+      }
+      .law {
+        .privacy {
+          font-size: clamp(12px, 1vw, 15px);
+        }
+        p {
+          font-size: clamp(6px, 0.8vw, 13px);
+        }
+      }
+    }
+  }
+}
+@media all and(max-width:1025px) {
+  #header {
+    background-color: transparent;
+  }
+  #logo a svg {
+    .symbol-green {
+      fill: transparent;
+    }
+    .svg02 {
+      fill: #fff;
+    }
+  }
+  #gnb {
+    display: none;
+  }
+  #gnbBtns {
+    display: block;
   }
 }

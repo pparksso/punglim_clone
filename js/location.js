@@ -3,7 +3,7 @@ const pannels = document.querySelectorAll("#location .pannel");
 let tabArr = [];
 
 const mapMaker = function (address, name) {
-  const mapContainer = document.querySelector(".map"), // 지도를 표시할 div
+  const mapContainer = document.querySelector("#map"), // 지도를 표시할 div
     mapOption = {
       center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
       level: 3, // 지도의 확대 레벨
@@ -47,6 +47,7 @@ mapMaker("서울시 중구 소월로 10 단암빌딩", "풍림무약 본사");
 tabs.forEach((item, index1) => {
   tabArr = [...tabs];
   item.addEventListener("click", function (e) {
+    window.scroll({ top: 220, behavior: "smooth" });
     e.preventDefault();
     tabArr.forEach((item2) => {
       item2.classList.remove("on");

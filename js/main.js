@@ -1,6 +1,6 @@
 const pannels = document.querySelectorAll("#business .pannel");
 const businessTitles = document.querySelectorAll("#business .title");
-const select = document.querySelector("#recommend .selectBar");
+const select = document.querySelector("#recommend .selectBtn");
 const selectList = document.querySelector("#recommend .selectList");
 let siblings = [];
 

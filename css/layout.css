@@ -50,6 +50,11 @@ button .material-icons {
   justify-content: space-between;
 }
 
+#logo a svg {
+  width: 224px;
+  height: 34px;
+}
+
 #gnb nav {
   display: flex;
   justify-content: flex-end;
@@ -116,6 +121,129 @@ button .material-icons {
   color: #fff;
 }
 
+#gnbBtns {
+  margin-right: 30px;
+  display: none;
+}
+#gnbBtns ul {
+  display: flex;
+  align-items: center;
+}
+#gnbBtns ul li a .material-icons {
+  color: #fff;
+  font-weight: 700;
+  font-size: 26px;
+  margin-right: 20px;
+}
+#gnbBtns ul li.hamberger {
+  position: relative;
+  height: 100px;
+}
+#gnbBtns ul li.hamberger.open span {
+  transition: all 0.25s ease-in-out;
+}
+#gnbBtns ul li.hamberger.open span:nth-child(1) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+#gnbBtns ul li.hamberger.open span:nth-child(2) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+#gnbBtns ul li.hamberger span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  left: 0;
+}
+#gnbBtns ul li.hamberger span:nth-child(1) {
+  top: 43px;
+}
+#gnbBtns ul li.hamberger span:nth-child(2) {
+  top: 52px;
+}
+
+#subHeader {
+  color: #fff;
+  background-image: url("../images/common/mobile-menu-bg.jpg");
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#subHeader .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#subHeader .container .headerTop {
+  height: 100px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+#subHeader .container .headerTop .langList {
+  display: flex;
+}
+#subHeader .container .headerTop .langList li {
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+#subHeader .container .headerTop .langList li .en {
+  color: #999;
+}
+#subHeader .container .headerTop .hamberger {
+  margin-right: 30px;
+  position: relative;
+  height: 100px;
+}
+#subHeader .container .headerTop .hamberger span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: all 0.25s ease-in-out;
+}
+#subHeader .container .headerTop .hamberger span:nth-child(1) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+#subHeader .container .headerTop .hamberger span:nth-child(2) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+#subHeader .container .list {
+  padding-top: 50px;
+}
+#subHeader .container .list li {
+  padding-bottom: 30px;
+}
+#subHeader .container .list li .depth01 {
+  font-size: 33px;
+  font-weight: 500;
+}
+#subHeader .container .list li .depth02 {
+  display: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: #999;
+  padding: 10px 0;
+}
+#subHeader .container .list li .depth02.open {
+  display: block;
+}
+#subHeader .container .list li .depth02 li {
+  padding: 10px 0;
+}
+
 #footer {
   background-color: #000;
   color: #fff;
@@ -123,15 +251,16 @@ button .material-icons {
 }
 #footer .container {
   display: flex;
-  justify-content: space-between;
 }
 #footer .container .title {
+  word-break: keep-all;
+  width: 50%;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.5;
 }
 #footer .container .footerRight {
-  padding: 15px 150px 0 0;
+  padding-top: 15px;
 }
 #footer .container .footerRight .footerMenu ul {
   margin-bottom: 60px;
@@ -234,4 +363,67 @@ button .material-icons {
   font-weight: 600;
   font-size: 13px;
   font-family: "Montserrat", sans-serif;
+}
+
+@media all and (max-width: 1800px) {
+  #header .container {
+    width: 93%;
+  }
+}
+@media all and (max-width: 1500px) {
+  .container {
+    width: 90%;
+  }
+  #header {
+    height: 100px;
+  }
+  #logo a svg {
+    width: clamp(215px, 14.9vw, 224px);
+    height: clamp(25px, 2.2vw, 34px);
+  }
+  #gnb nav .list li .depth01 {
+    font-size: clamp(15px, 1.2vw, 18px);
+  }
+  #gnb nav .list li .depth02 {
+    font-size: clamp(13px, 1vw, 16px);
+    top: 115px;
+  }
+  #footer .container .title {
+    font-size: clamp(40px, 3.2vw, 48px);
+  }
+  #footer .container .footerRight .footerMenu ul li {
+    font-size: clamp(20px, 1.8vw, 28px);
+  }
+  #footer .container .footerRight .footerMenu ul li .infoWrap .richwood {
+    font-size: clamp(20px, 1.8vw, 28px);
+  }
+  #footer .container .footerRight .footerMenu ul li .infoWrap .richwood::after {
+    font-size: clamp(20px, 1.8vw, 28px);
+  }
+  #footer .container .footerRight .footerMenu ul li .infoWrap .info {
+    font-size: clamp(11px, 0.9vw, 14px);
+  }
+  #footer .container .footerRight .footerMenu ul li .law .privacy {
+    font-size: clamp(12px, 1vw, 15px);
+  }
+  #footer .container .footerRight .footerMenu ul li .law p {
+    font-size: clamp(6px, 0.8vw, 13px);
+  }
+}
+@media all and (max-width: 1025px) {
+  #header {
+    background-color: transparent;
+  }
+  #logo a svg .symbol-green {
+    fill: transparent;
+  }
+  #logo a svg .svg02 {
+    fill: #fff;
+  }
+  #gnb {
+    display: none;
+  }
+  #gnbBtns {
+    display: block;
+  }
 }
