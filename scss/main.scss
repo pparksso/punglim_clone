@@ -716,6 +716,7 @@ p {
                 transform: scale(1.1);
               }
               .imgBox {
+                overflow: hidden;
                 position: relative;
                 &:before {
                   display: block;
