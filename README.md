@@ -4,4 +4,4 @@
 - 걸린 시간 : 22.07.20 - 22.07.25(6days)
 - 사용 기술 : javescript
 - swiper 라이브러리, 카카오맵 API 이용
-- 배포 : https://deft-twilight-8524ab.netlify.app/html/location.html
+- 배포 : https://deft-twilight-8524ab.netlify.app/html/index.html
